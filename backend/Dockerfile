@@ -33,8 +33,8 @@ RUN adduser --system --uid 1001 strapi
 COPY --from=builder --chown=strapi:strapi /app/node_modules ./node_modules
 COPY --from=builder --chown=strapi:strapi /app/build ./build
 COPY --from=builder --chown=strapi:strapi /app/config ./config
-COPY --from=builder --chown=strapi:strapi /app/database ./database
 COPY --from=builder --chown=strapi:strapi /app/public ./public
+COPY --from=builder --chown=strapi:strapi /app/src ./src
 COPY --from=builder --chown=strapi:strapi /app/package*.json ./
 
 # Создаем папку для uploads

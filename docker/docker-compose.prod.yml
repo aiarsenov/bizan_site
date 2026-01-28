@@ -54,7 +54,7 @@ services:
       DATABASE_NAME: ${POSTGRES_DB:-bizan_strapi}
       DATABASE_USERNAME: ${POSTGRES_USER:-strapi}
       DATABASE_PASSWORD: ${POSTGRES_PASSWORD}
-      DATABASE_SSL: false
+      DATABASE_SSL: "false"
       JWT_SECRET: ${JWT_SECRET}
       ADMIN_JWT_SECRET: ${ADMIN_JWT_SECRET}
       APP_KEYS: ${APP_KEYS}

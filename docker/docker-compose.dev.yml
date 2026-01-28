@@ -1,0 +1,51 @@
+# Docker Compose для ЛОКАЛЬНОЙ РАЗРАБОТКИ
+# Запускает только PostgreSQL и Redis
+# Next.js и Strapi запускаются нативно через npm
+
+version: '3.8'
+
+services:
+  # PostgreSQL 15 - основная БД для Strapi
+  postgres:
+    image: postgres:15-alpine
+    container_name: bizan_postgres_dev
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: bizan_strapi
+      POSTGRES_USER: strapi
+      POSTGRES_PASSWORD: strapi_dev_password_123
+    ports:
+      - "5432:5432"  # Доступен на localhost:5432
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U strapi"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Redis 7 - кэширование
+  redis:
+    image: redis:7-alpine
+    container_name: bizan_redis_dev
+    restart: unless-stopped
+    ports:
+      - "6379:6379"  # Доступен на localhost:6379
+    volumes:
+      - redis_data:/data
+    command: redis-server --appendonly yes
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+
+volumes:
+  postgres_data:
+    driver: local
+  redis_data:
+    driver: local
+
+networks:
+  default:
+    name: bizan_network_dev

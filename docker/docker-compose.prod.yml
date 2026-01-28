@@ -1,0 +1,98 @@
+# Docker Compose для PRODUCTION
+# Запускает весь стек: Next.js, Strapi, PostgreSQL, Redis
+
+version: '3.8'
+
+services:
+  # PostgreSQL 15 - основная БД
+  postgres:
+    image: postgres:15-alpine
+    container_name: bizan_postgres_prod
+    restart: always
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-bizan_strapi}
+      POSTGRES_USER: ${POSTGRES_USER:-strapi}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - bizan_network
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-strapi}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  # Redis 7 - кэширование
+  redis:
+    image: redis:7-alpine
+    container_name: bizan_redis_prod
+    restart: always
+    volumes:
+      - redis_data:/data
+    networks:
+      - bizan_network
+    command: redis-server --appendonly yes --requirepass ${REDIS_PASSWORD}
+    healthcheck:
+      test: ["CMD", "redis-cli", "--pass", "${REDIS_PASSWORD}", "ping"]
+      interval: 10s
+      timeout: 3s
+      retries: 5
+
+  # Strapi 4.17 - Headless CMS
+  strapi:
+    build:
+      context: ../backend
+      dockerfile: Dockerfile
+    container_name: bizan_strapi_prod
+    restart: always
+    environment:
+      NODE_ENV: production
+      DATABASE_CLIENT: postgres
+      DATABASE_HOST: postgres
+      DATABASE_PORT: 5432
+      DATABASE_NAME: ${POSTGRES_DB:-bizan_strapi}
+      DATABASE_USERNAME: ${POSTGRES_USER:-strapi}
+      DATABASE_PASSWORD: ${POSTGRES_PASSWORD}
+      DATABASE_SSL: false
+      JWT_SECRET: ${JWT_SECRET}
+      ADMIN_JWT_SECRET: ${ADMIN_JWT_SECRET}
+      APP_KEYS: ${APP_KEYS}
+      API_TOKEN_SALT: ${API_TOKEN_SALT}
+    volumes:
+      - strapi_uploads:/app/public/uploads
+    ports:
+      - "1337:1337"
+    networks:
+      - bizan_network
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+  # Next.js 15 - Frontend
+  frontend:
+    build:
+      context: ../frontend
+      dockerfile: Dockerfile
+    container_name: bizan_frontend_prod
+    restart: always
+    environment:
+      NODE_ENV: production
+      NEXT_PUBLIC_STRAPI_URL: ${NEXT_PUBLIC_STRAPI_URL:-http://strapi:1337}
+    ports:
+      - "3000:3000"
+    networks:
+      - bizan_network
+    depends_on:
+      - strapi
+
+volumes:
+  postgres_data:
+  redis_data:
+  strapi_uploads:
+
+networks:
+  bizan_network:
+    driver: bridge

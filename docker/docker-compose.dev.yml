@@ -2,8 +2,6 @@
 # Запускает только PostgreSQL и Redis
 # Next.js и Strapi запускаются нативно через npm
 
-version: '3.8'
-
 services:
   # PostgreSQL 15 - основная БД для Strapi
   postgres:

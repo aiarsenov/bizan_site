@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_sections_media_items",
+  "info": {
+    "displayName": "Медиа",
+    "description": "Элемент секции Медиа (новости, статьи)"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "excerpt": {
+      "type": "text"
+    },
+    "publishedDate": {
+      "type": "date"
+    },
+    "link": {
+      "type": "string"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    }
+  }
+}

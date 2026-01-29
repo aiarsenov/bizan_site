@@ -362,6 +362,46 @@ export interface AdminUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiHomePageHomePage extends Schema.SingleType {
+  collectionName: 'home_page';
+  info: {
+    description: '\u0413\u043B\u0430\u0432\u043D\u0430\u044F \u0441\u0442\u0440\u0430\u043D\u0438\u0446\u0430 \u043B\u0435\u043D\u0434\u0438\u043D\u0433\u0430 \u0411\u0418\u0417\u0410\u041D';
+    displayName: '\u0413\u043B\u0430\u0432\u043D\u0430\u044F \u0441\u0442\u0440\u0430\u043D\u0438\u0446\u0430';
+    pluralName: 'home-pages';
+    singularName: 'home-page';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    contacts: Attribute.Component<'sections.contacts'>;
+    createdAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::home-page.home-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    media: Attribute.Component<'sections.media-item', true>;
+    partners: Attribute.Component<'sections.partner-item', true>;
+    projects: Attribute.Component<'sections.project-item', true>;
+    publishedAt: Attribute.DateTime;
+    services: Attribute.Component<'sections.service-item', true>;
+    subtitle: Attribute.Text;
+    team: Attribute.Component<'sections.team-member', true>;
+    title: Attribute.String &
+      Attribute.Required &
+      Attribute.DefaultTo<'\u0411\u0418\u0417\u0410\u041D'>;
+    updatedAt: Attribute.DateTime;
+    updatedBy: Attribute.Relation<
+      'api::home-page.home-page',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface PluginContentReleasesRelease extends Schema.CollectionType {
   collectionName: 'strapi_releases';
   info: {
@@ -798,6 +838,7 @@ declare module '@strapi/types' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::home-page.home-page': ApiHomePageHomePage;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

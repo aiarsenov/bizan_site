@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_sections_partner_items",
+  "info": {
+    "displayName": "Партнёр",
+    "description": "Элемент секции Партнёры"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "website": {
+      "type": "string"
+    }
+  }
+}

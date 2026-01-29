@@ -1,0 +1,54 @@
+{
+  "kind": "singleType",
+  "collectionName": "home_page",
+  "info": {
+    "singularName": "home-page",
+    "pluralName": "home-pages",
+    "displayName": "Главная страница",
+    "description": "Главная страница лендинга БИЗАН"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "default": "БИЗАН"
+    },
+    "subtitle": {
+      "type": "text"
+    },
+    "services": {
+      "type": "component",
+      "repeatable": true,
+      "component": "sections.service-item"
+    },
+    "projects": {
+      "type": "component",
+      "repeatable": true,
+      "component": "sections.project-item"
+    },
+    "partners": {
+      "type": "component",
+      "repeatable": true,
+      "component": "sections.partner-item"
+    },
+    "media": {
+      "type": "component",
+      "repeatable": true,
+      "component": "sections.media-item"
+    },
+    "team": {
+      "type": "component",
+      "repeatable": true,
+      "component": "sections.team-member"
+    },
+    "contacts": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.contacts"
+    }
+  }
+}

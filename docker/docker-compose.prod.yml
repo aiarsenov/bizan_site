@@ -1,8 +1,6 @@
 # Docker Compose для PRODUCTION
 # Запускает весь стек: Next.js, Strapi, PostgreSQL, Redis
 
-version: '3.8'
-
 services:
   # PostgreSQL 15 - основная БД
   postgres:

@@ -37,8 +37,9 @@ COPY --from=builder --chown=strapi:strapi /app/public ./public
 COPY --from=builder --chown=strapi:strapi /app/src ./src
 COPY --from=builder --chown=strapi:strapi /app/package*.json ./
 
-# Создаем папку для uploads
-RUN mkdir -p /app/public/uploads && chown -R strapi:strapi /app/public/uploads
+# Создаем папки для uploads и database
+RUN mkdir -p /app/public/uploads /app/database/migrations && \
+    chown -R strapi:strapi /app/public/uploads /app/database
 
 USER strapi
 

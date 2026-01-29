@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 import "@/styles/connected-fonts.scss";
 import "@/styles/reset.scss";
-import "@/styles/main.scss";
+import "@/styles/globals.scss";
 
 export const metadata: Metadata = {
     title: "Бизан",

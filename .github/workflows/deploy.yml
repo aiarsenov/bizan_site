@@ -1,0 +1,51 @@
+name: Deploy to Production
+
+# Запускать при push в main ветку
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    name: Deploy to Yandex Cloud
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1. Checkout кода не нужен (деплой делается на сервере через git pull)
+
+      # 2. Подключиться к серверу и выполнить деплой
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@v1.0.0
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SERVER_SSH_KEY }}
+          script: |
+            echo "🚀 Начинаем деплой..."
+            
+            # Перейти в папку проекта
+            cd /opt/bizan_site
+            
+            # Получить последние изменения
+            echo "📥 Получаем обновления из GitHub..."
+            git pull
+            
+            # Пересобрать и перезапустить контейнеры
+            echo "🐳 Пересобираем Docker образы..."
+            docker-compose -f docker/docker-compose.prod.yml --env-file .env up -d --build
+            
+            # Показать статус
+            echo "✅ Деплой завершен!"
+            docker ps --format "table {{.Names}}\t{{.Status}}\t{{.Ports}}"
+            
+            echo ""
+            echo "🌐 Сайт доступен: https://dev.bizan.pro"
+            echo "🔧 Strapi Admin: https://dev.bizan.pro/admin"
+
+      # 3. Уведомление об успешном деплое (опционально)
+      - name: Deployment Status
+        if: success()
+        run: |
+          echo "✅ Deployment successful!"
+          echo "Site: https://dev.bizan.pro"

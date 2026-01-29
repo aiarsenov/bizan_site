@@ -402,7 +402,7 @@ git push origin main
 ssh user@server
 cd /opt/bizan_site
 git pull
-docker-compose -f docker/docker-compose.prod.yml --env-file .env up -d --build
+docker compose -f docker/docker-compose.prod.yml --env-file .env up -d --build
 ```
 
 ---

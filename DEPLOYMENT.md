@@ -98,10 +98,10 @@ cd /opt/bizan_site
 git pull
 
 # 4. Пересобрать и перезапустить
-docker-compose -f docker/docker-compose.prod.yml --env-file .env up -d --build
+docker compose -f docker/docker-compose.prod.yml --env-file .env up -d --build
 
 # 5. Посмотреть логи
-docker-compose -f docker/docker-compose.prod.yml logs -f
+docker compose -f docker/docker-compose.prod.yml logs -f
 
 # 6. Проверить статус
 docker ps
@@ -122,14 +122,14 @@ docker logs bizan_strapi_prod -f
 docker logs bizan_frontend_prod -f
 
 # Перезапустить контейнер
-docker-compose -f docker/docker-compose.prod.yml restart strapi
-docker-compose -f docker/docker-compose.prod.yml restart frontend
+docker compose -f docker/docker-compose.prod.yml restart strapi
+docker compose -f docker/docker-compose.prod.yml restart frontend
 
 # Остановить все
-docker-compose -f docker/docker-compose.prod.yml down
+docker compose -f docker/docker-compose.prod.yml down
 
 # Запустить все
-docker-compose -f docker/docker-compose.prod.yml --env-file .env up -d
+docker compose -f docker/docker-compose.prod.yml --env-file .env up -d
 ```
 
 ### Nginx:
@@ -183,11 +183,11 @@ sudo tail -50 /var/log/nginx/error.log
 
 ```bash
 # Проверить логи контейнеров
-docker-compose -f docker/docker-compose.prod.yml logs frontend
-docker-compose -f docker/docker-compose.prod.yml logs strapi
+docker compose -f docker/docker-compose.prod.yml logs frontend
+docker compose -f docker/docker-compose.prod.yml logs strapi
 
 # Перезапустить контейнеры
-docker-compose -f docker/docker-compose.prod.yml restart
+docker compose -f docker/docker-compose.prod.yml restart
 ```
 
 ### Проблема: SSL не работает

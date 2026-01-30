@@ -1,6 +1,6 @@
 "use client";
 
-import "./HeaderMenu.scss";
+import "./Menu.scss";
 
 type MenuItem = {
     url: string;
@@ -34,13 +34,13 @@ const MENU_ITEMS: MenuItem[] = [
     },
 ];
 
-export default function HeaderMenu() {
+export default function Menu() {
     return (
-        <ul className="header-menu">
+        <ul className="menu">
             {MENU_ITEMS.map((item, index) => (
                 <li key={index}>
                     <a
-                        className="header-menu__item"
+                        className="menu__item"
                         href={item.url}
                         aria-label={item.label}
                     >

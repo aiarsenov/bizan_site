@@ -28,7 +28,7 @@ export default function ButtonAction({
                 onClick();
             }}
         >
-            Обсудить проект
+            {label}
         </button>
     );
 }

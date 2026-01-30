@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import HeaderMenu from "../HeaderMenu/HeaderMenu";
+import Menu from "../Menu/Menu";
 
 import "./Header.scss";
 
@@ -29,7 +29,7 @@ export default function Header() {
                 </Link>
 
                 <div className="header__content">
-                    <HeaderMenu />
+                    <Menu />
 
                     <a
                         href="https://t.me/bizanpro"

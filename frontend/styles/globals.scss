@@ -3,6 +3,7 @@
 
 body {
     font-family: "Involve", sans-serif;
+    background: var(--color-blue-10);
 }
 
 html,
@@ -21,13 +22,12 @@ body {
 .wrapper {
     position: relative;
     max-width: 100%;
-    min-width: 360px;
+    min-width: 320px;
     min-height: 100vh;
     margin: 0 auto;
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    background: var(--color-blue-10);
 }
 
 .main {
@@ -81,8 +81,14 @@ body {
     right: 0;
     width: 100%;
     height: 100vh;
-    max-height: 590px;
+    // max-height: 590px;
     background: url("../public/bg-main.png") center no-repeat;
     background-size: cover;
     z-index: -1;
+}
+
+.scroll-icon {
+    background: url("../assets/icons/scroll.svg") center no-repeat;
+    width: 40px;
+    height: 40px;
 }

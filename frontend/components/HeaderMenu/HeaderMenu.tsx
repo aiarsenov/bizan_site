@@ -1,39 +1,53 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import "./HeaderMenu.scss";
 
-import getData from "@/utils/getData";
+type MenuItem = {
+    url: string;
+    label: string;
+};
+
+const MENU_ITEMS: MenuItem[] = [
+    {
+        url: "#services",
+        label: "Услуги",
+    },
+    {
+        url: "#projects",
+        label: "Проекты",
+    },
+    {
+        url: "#about",
+        label: "О компании",
+    },
+    {
+        url: "#team",
+        label: "Команда",
+    },
+    {
+        url: "#media",
+        label: "Медиа",
+    },
+    {
+        url: "#contacts",
+        label: "Контакты",
+    },
+];
 
 export default function HeaderMenu() {
-    const [menuItems, setMenuItems] = useState([]);
-
-    const getMenuItems = () => {
-        const strapiUrl =
-            process.env.NEXT_PUBLIC_STRAPI_URL || "http://localhost:1337";
-
-        return getData(`${strapiUrl}/api/menu-items?sort=order:asc`, {
-            Accept: "application/json",
-        })
-            .then((response) => {
-                if (response.status === 200) {
-                    setMenuItems(response.data.data);
-                }
-            })
-            .catch((error) => {
-                console.error(error.message || "Ошибка загрузки меню");
-            });
-    };
-
-    useEffect(() => {
-        getMenuItems();
-    }, []);
-
     return (
         <ul className="header-menu">
-            {menuItems.length > 0 &&
-                menuItems.map((item) => (
-                    <li key={item.id}>{item.attributes.title}</li>
-                ))}
+            {MENU_ITEMS.map((item, index) => (
+                <li key={index}>
+                    <a
+                        className="header-menu__item"
+                        href={item.url}
+                        aria-label={item.label}
+                    >
+                        {item.label}
+                    </a>
+                </li>
+            ))}
         </ul>
     );
 }

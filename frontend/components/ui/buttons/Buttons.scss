@@ -1,0 +1,17 @@
+.button {
+    &-action {
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 130%;
+        text-align: center;
+        padding: 15px 20px;
+        color: var(--color-white);
+        background: var(--color-blue-40);
+        border-radius: 50px;
+        transition: background var(--trans);
+
+        &:hover {
+            background: var(--color-purple);
+        }
+    }
+}

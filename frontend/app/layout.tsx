@@ -2,11 +2,12 @@ import type { Metadata } from "next";
 
 import "@/styles/connected-fonts.scss";
 import "@/styles/reset.scss";
+import "@/styles/variables.scss";
 import "@/styles/globals.scss";
 
 export const metadata: Metadata = {
-  title: "БИЗАН | Профессиональные решения для бизнеса",
-  description: "Инновационные продукты и услуги для вашего бизнеса",
+    title: "БИЗАН | Профессиональные решения для бизнеса",
+    description: "Инновационные продукты и услуги для вашего бизнеса",
 };
 
 export default function RootLayout({

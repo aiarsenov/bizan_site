@@ -1,0 +1,23 @@
+@use "@/styles/media-breakpoints" as *;
+
+.header-menu {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
+
+    &__item {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 100%;
+
+        @media (min-width: $media-xxxl) {
+            font-size: 16px;
+        }
+    }
+
+    @media (min-width: $media-xl) {
+        padding-top: 6px;
+        flex-direction: row;
+    }
+}

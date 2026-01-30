@@ -1,9 +1,12 @@
 "use client";
 
+import { useState } from "react";
+
 import Image from "next/image";
 import Link from "next/link";
 
 import Menu from "../Menu/Menu";
+import HeaderMenu from "../HeaderMenu/HeaderMenu";
 
 import "./Header.scss";
 
@@ -12,6 +15,8 @@ import Tg from "@/assets/telegram.svg";
 import ButtonAction from "../ui/buttons/ButtonAction";
 
 export default function Header() {
+    const [isActive, setIsActive] = useState(false);
+
     return (
         <header className="header">
             <div className="container header__container">
@@ -56,11 +61,14 @@ export default function Header() {
                     <button
                         type="button"
                         className="header__menu-btn"
-                        title="Открыть меню"
+                        title={isActive ? "Закрыть меню" : "Открыть меню"}
+                        onClick={() => setIsActive(true)}
                     >
                         <span></span>
                     </button>
                 </div>
+
+                <HeaderMenu isActive={isActive} setIsActive={setIsActive} />
             </div>
         </header>
     );

@@ -36,18 +36,17 @@ const MENU_ITEMS: MenuItem[] = [
 
 export default function Menu() {
     return (
-        <ul className="menu">
+        <nav className="menu">
             {MENU_ITEMS.map((item, index) => (
-                <li key={index}>
-                    <a
-                        className="menu__item"
-                        href={item.url}
-                        aria-label={item.label}
-                    >
-                        {item.label}
-                    </a>
-                </li>
+                <a
+                    className="menu__item"
+                    href={item.url}
+                    aria-label={item.label}
+                    key={index}
+                >
+                    {item.label}
+                </a>
             ))}
-        </ul>
+        </nav>
     );
 }

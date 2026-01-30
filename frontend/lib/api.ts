@@ -38,10 +38,10 @@ async function fetchAPI(path: string, options: RequestInit = {}): Promise<any> {
  * Получить данные главной страницы
  */
 export async function getHomePage() {
-    const data = await fetchAPI("/home-page?populate=*", {
-        cache: "no-store",
-    });
-    return data.data?.attributes || null;
+  const data = await fetchAPI('/home-page?populate=deep', {
+    cache: 'no-store',
+  });
+  return data.data?.attributes || null;
 }
 
 /**

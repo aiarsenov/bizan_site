@@ -19,14 +19,48 @@ export default function SectionMain() {
             { title: "200+", subtitle: "Проектов" },
         ],
     });
+    const [loading, setLoading] = useState(true);
 
-    // useEffect(() => {
-    //     const response = getHomePage();
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await getHomePage();
 
-    //     if (response) {
-    //         setData(response);
-    //     }
-    // }, []);
+                if (response) {
+                    // Формируем данные из API
+                    const apiData: any = {
+                        title: response.title?.replace(/\n/g, '<br/>') || data.title,
+                        subtitle: response.subtitle || data.subtitle,
+                        stats: []
+                    };
+
+                    // Если есть stats компонент
+                    if (response.stats) {
+                        apiData.stats = [
+                            { title: `${response.stats.years}`, subtitle: "Лет на рынке" },
+                            { title: `${response.stats.projects}+`, subtitle: "Проектов" },
+                            { title: `${response.stats.employees}`, subtitle: "Сотрудников" },
+                        ];
+                    }
+                    // Иначе используем services как статистику (временно)
+                    else if (response.services && response.services.length > 0) {
+                        apiData.stats = response.services.slice(0, 3).map((service: any) => ({
+                            title: service.title,
+                            subtitle: service.description
+                        }));
+                    }
+
+                    setData(apiData);
+                }
+            } catch (error) {
+                console.error('Error fetching home page data:', error);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchData();
+    }, []);
 
     return (
         <section className="section-main">

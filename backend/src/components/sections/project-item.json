@@ -21,6 +21,10 @@
     },
     "link": {
       "type": "string"
+    },
+    "technologies": {
+      "type": "json",
+      "required": false
     }
   }
 }

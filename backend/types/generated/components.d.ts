@@ -10,7 +10,20 @@ export interface SectionsContacts extends Schema.Component {
     address: Attribute.Text;
     email: Attribute.Email;
     phone: Attribute.String;
+    socialLinks: Attribute.JSON;
     workingHours: Attribute.String;
+  };
+}
+
+export interface SectionsFaqItem extends Schema.Component {
+  collectionName: 'components_sections_faq_items';
+  info: {
+    description: '\u0412\u043E\u043F\u0440\u043E\u0441 \u0438 \u043E\u0442\u0432\u0435\u0442 \u0434\u043B\u044F \u0441\u0435\u043A\u0446\u0438\u0438 FAQ';
+    displayName: 'FAQ \u044D\u043B\u0435\u043C\u0435\u043D\u0442';
+  };
+  attributes: {
+    answer: Attribute.Text & Attribute.Required;
+    question: Attribute.String & Attribute.Required;
   };
 }
 
@@ -52,6 +65,7 @@ export interface SectionsProjectItem extends Schema.Component {
     description: Attribute.Text;
     image: Attribute.Media<'images'>;
     link: Attribute.String;
+    technologies: Attribute.JSON;
     title: Attribute.String & Attribute.Required;
   };
 }
@@ -66,6 +80,19 @@ export interface SectionsServiceItem extends Schema.Component {
     description: Attribute.Text;
     icon: Attribute.String;
     title: Attribute.String & Attribute.Required;
+  };
+}
+
+export interface SectionsStats extends Schema.Component {
+  collectionName: 'components_sections_stats';
+  info: {
+    description: '\u0421\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u043A\u0430 \u0434\u043B\u044F Hero \u0441\u0435\u043A\u0446\u0438\u0438';
+    displayName: '\u0421\u0442\u0430\u0442\u0438\u0441\u0442\u0438\u043A\u0430';
+  };
+  attributes: {
+    employees: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
+    projects: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
+    years: Attribute.Integer & Attribute.Required & Attribute.DefaultTo<0>;
   };
 }
 
@@ -89,10 +116,12 @@ declare module '@strapi/types' {
   export module Shared {
     export interface Components {
       'sections.contacts': SectionsContacts;
+      'sections.faq-item': SectionsFaqItem;
       'sections.media-item': SectionsMediaItem;
       'sections.partner-item': SectionsPartnerItem;
       'sections.project-item': SectionsProjectItem;
       'sections.service-item': SectionsServiceItem;
+      'sections.stats': SectionsStats;
       'sections.team-member': SectionsTeamMember;
     }
   }

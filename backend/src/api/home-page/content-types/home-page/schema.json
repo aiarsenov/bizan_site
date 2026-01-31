@@ -20,6 +20,11 @@
     "subtitle": {
       "type": "text"
     },
+    "stats": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.stats"
+    },
     "services": {
       "type": "component",
       "repeatable": true,
@@ -49,6 +54,11 @@
       "type": "component",
       "repeatable": false,
       "component": "sections.contacts"
+    },
+    "faq": {
+      "type": "component",
+      "repeatable": true,
+      "component": "sections.faq-item"
     }
   }
 }

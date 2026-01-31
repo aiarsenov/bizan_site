@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_sections_faq_items",
+  "info": {
+    "displayName": "FAQ элемент",
+    "description": "Вопрос и ответ для секции FAQ"
+  },
+  "options": {},
+  "attributes": {
+    "question": {
+      "type": "string",
+      "required": true
+    },
+    "answer": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

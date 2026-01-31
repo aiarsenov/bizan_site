@@ -33,6 +33,8 @@ RUN adduser --system --uid 1001 nextjs
 
 # Копируем необходимые файлы
 COPY --from=builder /app/public ./public
+COPY --from=builder /app/fonts ./fonts
+COPY --from=builder /app/assets ./assets
 COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
 COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 

@@ -38,7 +38,7 @@ async function fetchAPI(
  * Получить данные главной страницы
  */
 export async function getHomePage() {
-  const data = await fetchAPI('/home-page?populate=deep', {
+  const data = await fetchAPI('/home-page?populate[services]=*&populate[projects]=*&populate[partners]=*&populate[media]=*&populate[team]=*&populate[contacts]=*', {
     cache: 'no-store',
   });
   return data.data?.attributes || null;

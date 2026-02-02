@@ -8,9 +8,12 @@ export default function SectionPartners({ data }: { data: object }) {
                     {data.title}
                 </h3>
 
-                {/* {data?.logos?.length > 0 && (
-                    <img src={logo} alt="client logo" />
-                )} */}
+                <div className="section-partners__logos">
+                    {data?.logos?.length > 0 &&
+                        data?.logos?.map((item) => (
+                            <img src={item.src} alt={item.alt} key={item.src} />
+                        ))}
+                </div>
             </div>
         </section>
     );

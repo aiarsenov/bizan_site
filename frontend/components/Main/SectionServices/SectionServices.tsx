@@ -1,63 +1,6 @@
-"use client";
-
-import { useState, useEffect } from "react";
-
-import { getServices } from "@/lib/api";
-
 import "./SectionServices.scss";
 
-export default function SectionServices() {
-    const [data, setData] = useState({
-        title: "Услуги",
-        subtitle:
-            "Повышаем эффективность бизнеса за счёт цифровизации и управления на основе данных",
-        services: [
-            {
-                id: 1,
-                title: "Разрабатываем цифровые аналитические сервисы",
-                subtitle:
-                    "Рыбатекст используется дизайнерами, проектировщиками",
-                url: "#",
-            },
-            {
-                id: 2,
-                title: "Создаём системы корпоративной аналитики",
-                subtitle:
-                    "Рыбатекст используется дизайнерами, проектировщиками",
-                url: "#",
-            },
-            {
-                id: 3,
-                title: "Разрабатываем финансовые модели и бизнес-планы",
-                subtitle:
-                    "Рыбатекст используется дизайнерами, проектировщиками",
-                url: "#",
-            },
-            {
-                id: 4,
-                title: "Исследуем рынки, клиентов и конкурентов",
-                subtitle:
-                    "Рыбатекст используется дизайнерами, проектировщиками",
-                url: "#",
-            },
-            {
-                id: 5,
-                title: "Проводим экономический анализ бизнеса",
-                subtitle:
-                    "Рыбатекст используется дизайнерами, проектировщиками",
-                url: "#",
-            },
-        ],
-    });
-
-    // useEffect(() => {
-    //     const response = getHomePage();
-
-    //     if (response) {
-    //         setData(response);
-    //     }
-    // }, []);
-
+export default function SectionServices({ data }: { data: object }) {
     return (
         <section className="section-services">
             <div className="container section-services__container">
@@ -67,8 +10,8 @@ export default function SectionServices() {
                 </div>
 
                 <ul className="section-services__list">
-                    {data.services.length > 0 &&
-                        data.services.map((item) => (
+                    {data.list?.length > 0 &&
+                        data.list?.map((item) => (
                             <li key={item.id}>
                                 <a
                                     href={item.url}

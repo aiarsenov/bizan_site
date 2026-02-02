@@ -9,29 +9,59 @@
     display: flex;
     justify-content: flex-end;
     will-change: transform;
-    transition: transform var(--trans);
+    transition: transform 0.15s 0.05s;
     transform: translate3d(100%, 0, 0);
 
+    &::before {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.7);
+        opacity: 0;
+        transition: opacity ease-in-out 0.1s 0s;
+        z-index: -1;
+    }
+
     &.active {
+        transition: transform 0.15s 0s;
         transform: translate3d(0, 0, 0);
+
+        &::before {
+            opacity: 1;
+            transition: opacity ease-in-out 0.25s 0.1s;
+        }
     }
 
     &__wrapper {
-        padding: 20px 15px;
+        padding: 15px;
         height: 100%;
         width: 100%;
-        max-width: 560px;
+        max-width: 385px;
         overflow-y: auto;
         background: var(--color-white);
+        transition: all var(--trans);
+
+        @media (min-width: 385px) {
+            border-radius: 20px 0 0 20px;
+        }
+
+        @media (min-width: $media-md) {
+            padding: 20px 20px 20px 30px;
+        }
 
         .menu {
             display: flex !important;
+            align-items: flex-start;
+            width: 100%;
+            gap: 20px;
 
             &__item {
                 color: var(--color-blue-0);
-                font-size: 16px;
-                font-weight: 600;
-                text-transform: uppercase;
+                font-weight: 500;
+                font-size: 27px;
+                line-height: 120%;
             }
         }
     }
@@ -40,8 +70,37 @@
         &__header {
             display: flex;
             align-items: center;
-            justify-content: flex-end;
+            justify-content: space-between;
+            gap: 15px;
             margin-bottom: 30px;
+
+            @media (min-width: $media-md) {
+                margin-bottom: 40px;
+            }
+        }
+
+        &__logo {
+            width: 84px;
+            flex: 84px;
+            height: 26px;
+
+            @media (min-width: $media-md) {
+                width: 91px;
+                flex: 91px;
+                height: 28px;
+            }
+
+            svg {
+                width: 84px;
+                flex: 84px;
+                height: 26px;
+
+                @media (min-width: $media-md) {
+                    width: 91px;
+                    flex: 91px;
+                    height: 28px;
+                }
+            }
         }
 
         &__body {
@@ -53,9 +112,16 @@
     }
 
     &__close-btn {
-        flex: 0 0 44px;
-        width: 44px;
-        height: 44px;
+        flex: 0 0 48px;
+        width: 48px;
+        height: 48px;
+        background: #e6e6e6;
+        border-radius: 50%;
+
+        img {
+            width: 24px;
+            height: 24px;
+        }
     }
 
     @media (min-width: $media-xl) {

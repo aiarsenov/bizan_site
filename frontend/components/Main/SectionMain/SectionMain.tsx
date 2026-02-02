@@ -1,33 +1,10 @@
 "use client";
 
-import { useState, useEffect } from "react";
-
 import ButtonAction from "../../ui/buttons/ButtonAction";
-
-import { getHomePage } from "@/lib/api";
 
 import "./SectionMain.scss";
 
-export default function SectionMain() {
-    const [data, setData] = useState({
-        title: "Превращаем данные <br/> в инструменты управления объединяя аналитику и технологии",
-        subtitle:
-            "Не ждём ТЗ, а предлагаем решение: бизнес-логика, методология, проектирование, разработка и внедрение",
-        stats: [
-            { title: "90%", subtitle: "Рекомендуют" },
-            { title: "12", subtitle: "Лет на рынке" },
-            { title: "200+", subtitle: "Проектов" },
-        ],
-    });
-
-    // useEffect(() => {
-    //     const response = getHomePage();
-
-    //     if (response) {
-    //         setData(response);
-    //     }
-    // }, []);
-
+export default function SectionMain({ data }: { data: object }) {
     return (
         <section className="section-main">
             <div className="bg-active"></div>

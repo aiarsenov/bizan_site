@@ -362,6 +362,40 @@ export interface AdminUser extends Schema.CollectionType {
   };
 }
 
+export interface ApiContactSubmissionContactSubmission
+  extends Schema.CollectionType {
+  collectionName: 'contact_submissions';
+  info: {
+    description: '\u0421\u043E\u043E\u0431\u0449\u0435\u043D\u0438\u044F \u043E\u0442 \u043A\u043B\u0438\u0435\u043D\u0442\u043E\u0432 \u0447\u0435\u0440\u0435\u0437 \u043A\u043E\u043D\u0442\u0430\u043A\u0442\u043D\u0443\u044E \u0444\u043E\u0440\u043C\u0443';
+    displayName: '\u041E\u0431\u0440\u0430\u0449\u0435\u043D\u0438\u044F \u0441 \u0444\u043E\u0440\u043C\u044B';
+    pluralName: 'contact-submissions';
+    singularName: 'contact-submission';
+  };
+  options: {
+    draftAndPublish: false;
+  };
+  attributes: {
+    createdAt: Attribute.DateTime;
+    createdBy: Attribute.Relation<
+      'api::contact-submission.contact-submission',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+    email: Attribute.Email & Attribute.Required;
+    message: Attribute.Text & Attribute.Required;
+    name: Attribute.String & Attribute.Required;
+    phone: Attribute.String;
+    updatedAt: Attribute.DateTime;
+    updatedBy: Attribute.Relation<
+      'api::contact-submission.contact-submission',
+      'oneToOne',
+      'admin::user'
+    > &
+      Attribute.Private;
+  };
+}
+
 export interface ApiHomePageHomePage extends Schema.SingleType {
   collectionName: 'home_page';
   info: {
@@ -382,16 +416,14 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
       'admin::user'
     > &
       Attribute.Private;
-    media: Attribute.Component<'sections.media-item', true>;
-    partners: Attribute.Component<'sections.partner-item', true>;
-    projects: Attribute.Component<'sections.project-item', true>;
+    faq: Attribute.Component<'sections.faq-section'>;
+    hero: Attribute.Component<'sections.hero-section'> & Attribute.Required;
+    media: Attribute.Component<'sections.media-section'>;
+    partners: Attribute.Component<'sections.partners-section'>;
+    projects: Attribute.Component<'sections.projects-section'>;
     publishedAt: Attribute.DateTime;
-    services: Attribute.Component<'sections.service-item', true>;
-    subtitle: Attribute.Text;
-    team: Attribute.Component<'sections.team-member', true>;
-    title: Attribute.String &
-      Attribute.Required &
-      Attribute.DefaultTo<'\u0411\u0418\u0417\u0410\u041D'>;
+    services: Attribute.Component<'sections.services-section'>;
+    team: Attribute.Component<'sections.team-section'>;
     updatedAt: Attribute.DateTime;
     updatedBy: Attribute.Relation<
       'api::home-page.home-page',
@@ -871,6 +903,7 @@ declare module '@strapi/types' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::contact-submission.contact-submission': ApiContactSubmissionContactSubmission;
       'api::home-page.home-page': ApiHomePageHomePage;
       'api::menu-item.menu-item': ApiMenuItemMenuItem;
       'plugin::content-releases.release': PluginContentReleasesRelease;

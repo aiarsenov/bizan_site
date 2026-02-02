@@ -12,43 +12,46 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "title": {
-      "type": "string",
-      "required": true,
-      "default": "БИЗАН"
-    },
-    "subtitle": {
-      "type": "text"
+    "hero": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.hero-section",
+      "required": true
     },
     "services": {
       "type": "component",
-      "repeatable": true,
-      "component": "sections.service-item"
+      "repeatable": false,
+      "component": "sections.services-section"
     },
     "projects": {
       "type": "component",
-      "repeatable": true,
-      "component": "sections.project-item"
+      "repeatable": false,
+      "component": "sections.projects-section"
     },
     "partners": {
       "type": "component",
-      "repeatable": true,
-      "component": "sections.partner-item"
+      "repeatable": false,
+      "component": "sections.partners-section"
     },
     "media": {
       "type": "component",
-      "repeatable": true,
-      "component": "sections.media-item"
+      "repeatable": false,
+      "component": "sections.media-section"
     },
     "team": {
       "type": "component",
-      "repeatable": true,
-      "component": "sections.team-member"
+      "repeatable": false,
+      "component": "sections.team-section"
     },
     "contacts": {
       "type": "component",
       "repeatable": false,
       "component": "sections.contacts"
+    },
+    "faq": {
+      "type": "component",
+      "repeatable": false,
+      "component": "sections.faq-section"
     }
   }
 }

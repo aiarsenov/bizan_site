@@ -17,6 +17,10 @@
     },
     "workingHours": {
       "type": "string"
+    },
+    "socialLinks": {
+      "type": "json",
+      "required": false
     }
   }
 }

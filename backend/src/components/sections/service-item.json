@@ -1,8 +1,8 @@
 {
   "collectionName": "components_sections_service_items",
   "info": {
-    "displayName": "Услуга",
-    "description": "Элемент секции Услуги"
+    "displayName": "Элемент услуги",
+    "description": "Отдельная плитка услуги"
   },
   "options": {},
   "attributes": {
@@ -10,8 +10,11 @@
       "type": "string",
       "required": true
     },
-    "description": {
+    "subtitle": {
       "type": "text"
+    },
+    "url": {
+      "type": "string"
     },
     "icon": {
       "type": "string"

@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_sections_projects_sections",
+  "info": {
+    "displayName": "Секция проектов",
+    "description": "Секция с заголовком, подзаголовком и списком проектов"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "subtitle": {
+      "type": "text"
+    },
+    "list": {
+      "type": "component",
+      "repeatable": true,
+      "component": "sections.project-item"
+    }
+  }
+}

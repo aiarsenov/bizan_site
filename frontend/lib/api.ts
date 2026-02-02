@@ -36,12 +36,21 @@ async function fetchAPI(path: string, options: RequestInit = {}): Promise<any> {
 
 /**
  * Получить данные главной страницы
+ * Все секции загружаются в одном запросе с вложенными данными
  */
 export async function getHomePage() {
-  const data = await fetchAPI('/home-page?populate=deep', {
-    cache: 'no-store',
-  });
-  return data.data?.attributes || null;
+  try {
+    const data = await fetchAPI(
+      '/home-page?populate[hero][populate]=*&populate[services][populate]=*&populate[projects][populate]=*&populate[partners][populate]=*&populate[media][populate]=*&populate[team][populate]=*&populate[faq][populate]=*&populate[contacts]=*',
+      {
+        cache: 'no-store',
+      }
+    );
+    return data.data?.attributes || null;
+  } catch (error) {
+    console.error('Error loading home page data:', error);
+    return null;
+  }
 }
 
 /**

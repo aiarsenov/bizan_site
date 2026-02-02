@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_sections_stats",
+  "info": {
+    "displayName": "Статистика",
+    "description": "Статистика для Hero секции"
+  },
+  "options": {},
+  "attributes": {
+    "years": {
+      "type": "integer",
+      "required": true,
+      "default": 0
+    },
+    "projects": {
+      "type": "integer",
+      "required": true,
+      "default": 0
+    },
+    "employees": {
+      "type": "integer",
+      "required": true,
+      "default": 0
+    }
+  }
+}

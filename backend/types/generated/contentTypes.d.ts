@@ -416,18 +416,14 @@ export interface ApiHomePageHomePage extends Schema.SingleType {
       'admin::user'
     > &
       Attribute.Private;
-    faq: Attribute.Component<'sections.faq-item', true>;
-    media: Attribute.Component<'sections.media-item', true>;
-    partners: Attribute.Component<'sections.partner-item', true>;
-    projects: Attribute.Component<'sections.project-item', true>;
+    faq: Attribute.Component<'sections.faq-section'>;
+    hero: Attribute.Component<'sections.hero-section'> & Attribute.Required;
+    media: Attribute.Component<'sections.media-section'>;
+    partners: Attribute.Component<'sections.partners-section'>;
+    projects: Attribute.Component<'sections.projects-section'>;
     publishedAt: Attribute.DateTime;
-    services: Attribute.Component<'sections.service-item', true>;
-    stats: Attribute.Component<'sections.stats'>;
-    subtitle: Attribute.Text;
-    team: Attribute.Component<'sections.team-member', true>;
-    title: Attribute.String &
-      Attribute.Required &
-      Attribute.DefaultTo<'\u0411\u0418\u0417\u0410\u041D'>;
+    services: Attribute.Component<'sections.services-section'>;
+    team: Attribute.Component<'sections.team-section'>;
     updatedAt: Attribute.DateTime;
     updatedBy: Attribute.Relation<
       'api::home-page.home-page',

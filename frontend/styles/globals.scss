@@ -92,3 +92,43 @@ body {
     width: 40px;
     height: 40px;
 }
+
+.title {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 140%;
+    color: var(--color-white-50);
+    margin-bottom: 15px;
+
+    @media (min-width: $media-md) {
+        font-size: 16px;
+    }
+
+    @media (min-width: $media-xl) {
+        font-size: 18px;
+    }
+
+    @media (min-width: $media-xxxl) {
+        font-size: 20px;
+    }
+}
+
+.subtitle {
+    font-weight: 500;
+    font-size: 27px;
+    line-height: 120%;
+    margin-bottom: 20px;
+
+    @media (min-width: $media-md) {
+        font-size: 35px;
+        margin-bottom: 40px;
+    }
+
+    @media (min-width: $media-xl) {
+        margin-bottom: 70px;
+    }
+
+    @media (min-width: $media-xxxl) {
+        font-size: 45px;
+    }
+}

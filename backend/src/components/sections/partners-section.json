@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_sections_partners_sections",
+  "info": {
+    "displayName": "Секция партнёров",
+    "description": "Секция с заголовком, подзаголовком и списком партнёров"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "subtitle": {
+      "type": "text"
+    },
+    "list": {
+      "type": "component",
+      "repeatable": true,
+      "component": "sections.partner-item"
+    }
+  }
+}

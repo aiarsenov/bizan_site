@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_sections_faq_sections",
+  "info": {
+    "displayName": "Секция FAQ",
+    "description": "Секция с заголовком, подзаголовком и списком вопросов"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "subtitle": {
+      "type": "text"
+    },
+    "list": {
+      "type": "component",
+      "repeatable": true,
+      "component": "sections.faq-item"
+    }
+  }
+}

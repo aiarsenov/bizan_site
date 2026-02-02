@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_sections_services_sections",
+  "info": {
+    "displayName": "Секция услуг",
+    "description": "Секция с заголовком, подзаголовком и списком услуг"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "subtitle": {
+      "type": "text"
+    },
+    "list": {
+      "type": "component",
+      "repeatable": true,
+      "component": "sections.service-item"
+    }
+  }
+}

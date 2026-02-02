@@ -1,20 +1,6 @@
 @use "@/styles/media-breakpoints" as *;
 
 .section-services {
-    margin-bottom: 100px;
-
-    @media (min-width: $media-md) {
-        margin-bottom: 120px;
-    }
-
-    @media (min-width: $media-xl) {
-        margin-bottom: 150px;
-    }
-
-    @media (min-width: $media-xxxl) {
-        margin-bottom: 200px;
-    }
-
     &__text-content {
         @media (min-width: $media-xl) {
             margin-left: auto;

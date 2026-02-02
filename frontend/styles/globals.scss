@@ -132,3 +132,19 @@ body {
         font-size: 45px;
     }
 }
+
+.section {
+    margin-bottom: 100px;
+
+    @media (min-width: $media-md) {
+        margin-bottom: 120px;
+    }
+
+    @media (min-width: $media-xl) {
+        margin-bottom: 150px;
+    }
+
+    @media (min-width: $media-xxxl) {
+        margin-bottom: 200px;
+    }
+}

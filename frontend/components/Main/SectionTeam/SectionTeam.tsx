@@ -1,5 +1,7 @@
-import React from "react";
-
 export default function SectionTeam() {
-    return <div>SectionTeam</div>;
+    return (
+        <section className="section section-team">
+            <div className="container section-team__container">Team</div>
+        </section>
+    );
 }

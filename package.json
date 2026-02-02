@@ -38,5 +38,8 @@
     "url": "https://github.com/aiarsenov/bizan_site.git"
   },
   "author": "aiarsenov",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "swiper": "^12.1.0"
+  }
 }

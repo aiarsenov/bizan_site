@@ -14,4 +14,21 @@
             background: var(--color-purple);
         }
     }
+
+    &-link {
+        display: block;
+        width: fit-content;
+        padding: 15px 20px;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 130%;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.05);
+        border-radius: 50px;
+        transition: background var(--trans);
+
+        &:hover {
+            background: var(--color-blue-40);
+        }
+    }
 }

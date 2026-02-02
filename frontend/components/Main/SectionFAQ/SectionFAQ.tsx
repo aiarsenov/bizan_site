@@ -1,5 +1,7 @@
-import React from "react";
-
 export default function SectionFAQ() {
-    return <div>SectionFAQ</div>;
+    return (
+        <section className="section section-faq">
+            <div className="container section-faq__container">FAQ</div>
+        </section>
+    );
 }

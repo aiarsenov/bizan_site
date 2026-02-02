@@ -67,17 +67,87 @@ const LOCAL = {
             },
         ],
     },
+    partners: {
+        title: "Работаем с компаниями среднего и крупного бизнеса",
+        logos: [
+            "../public/partners/Logo-alor.svg",
+            "../public/partners/Logo-coleman-group.svg",
+            "../public/partners/Logo-energo.svg",
+            "../public/partners/Logo-gazstroyprom.svg",
+            "../public/partners/Logo-gemabank.svg",
+            "../public/partners/Logo-h2o.svg",
+            "../public/partners/Logo-mandarin.svg",
+            "../public/partners/Logo-rtk.svg",
+            "../public/partners/Logo-sogaz.svg",
+            "../public/partners/Logo-tretyakov-gallery.svg",
+            "../public/partners/Logo-united.svg",
+            "../public/partners/Logo-vtb.svg",
+            "../public/partners/Logo-yarmarka.svg",
+        ],
+    },
+    media: {
+        title: "Медиа",
+        subtitle: "Делимся своими подходами в СМИ",
+        posts: [
+            {
+                id: 1,
+                title: "Четыре проблемы управленческого учета в бизнесе",
+                source: "РБК ПРО",
+                read_time: "30 мин.",
+                url: "#",
+            },
+            {
+                id: 2,
+                title: "Почему даже малому бизнесу нужна аналитика: примеры из практики",
+                source: "Клерк",
+                read_time: "30 мин.",
+                url: "#",
+            },
+            {
+                id: 3,
+                title: "Какая у тебя маржа или рентабельность?Что должен знать каждый предприниматель",
+                source: "РБК ПРО",
+                read_time: "30 мин.",
+                url: "#",
+            },
+            {
+                id: 4,
+                title: "Как выстроить финансовый план, если ситуация в бизнесе шаткая",
+                source: "Executive.ru",
+                read_time: "30 мин.",
+                url: "#",
+            },
+            {
+                id: 5,
+                title: "Как проводить анализ рынка?",
+                source: "vc.ru",
+                read_time: "30 мин.",
+                url: "#",
+            },
+            {
+                id: 6,
+                title: "Финансовая модель или бюджет: в чём разница и когда применять каждый инструмент",
+                source: "Клерк",
+                read_time: "30 мин.",
+                url: "#",
+            },
+        ],
+    },
 };
 
 export default function Main() {
     const [data, setData] = useState(LOCAL);
 
     useEffect(() => {
-        const response = getHomePage();
+        const loadData = async () => {
+            const response = await getHomePage();
 
-        if (response.data) {
-            setData(response);
-        }
+            if (response.data) {
+                setData(response.data);
+            }
+        };
+
+        loadData();
     }, []);
 
     return (
@@ -85,16 +155,16 @@ export default function Main() {
             <SectionMain data={data.hero} />
 
             <SectionServices data={data.services} />
-            {/* 
+
             <SectionProjects />
 
-            <SectionPartners />
+            <SectionPartners data={data.partners} />
 
             <SectionTeam />
 
-            <SectionMedia />
+            <SectionMedia data={data.media} />
 
-            <SectionFAQ /> */}
+            <SectionFAQ />
         </main>
     );
 }

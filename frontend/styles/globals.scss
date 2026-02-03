@@ -92,18 +92,38 @@ body {
 
 .circle-bg {
     position: absolute;
-    width: 250%;
-    top: 50%;
+    width: 100%;
+    aspect-ratio: 360 / 1857;
+    top: 25%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: -1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background: center / cover no-repeat
+        url("../public/bg-circle/circle-360.svg");
 
-    svg {
-        width: 100%;
-        height: 100%;
+    @media (min-width: $media-md) {
+        background: center / cover no-repeat
+            url("../public/bg-circle/circle-768.svg");
+        top: 30%;
+        aspect-ratio: 768 / 1857;
+    }
+
+    @media (min-width: $media-xl) {
+        background: center / cover no-repeat
+            url("../public/bg-circle/circle-1280.svg");
+        top: 50%;
+        aspect-ratio: 1280 / 2025;
+    }
+
+    @media (min-width: $media-xxxl) {
+        background: center / cover no-repeat
+            url("../public/bg-circle/circle-1920.svg");
+        top: 38%;
+        aspect-ratio: 1920 / 2025;
+    }
+
+    @media (min-width: 2560px) {
+        top: 10%;
     }
 }
 

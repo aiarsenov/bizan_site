@@ -67,6 +67,43 @@ const LOCAL = {
             },
         ],
     },
+    projects: {
+        title: "Наши проекты",
+        list: [
+            {
+                id: 1,
+                title: "United Fashion Group",
+                text: "Создали систему аналитики продаж, объединяющую данные из 1С, WB и Ozon.",
+                url: "#",
+                category: "Системы аналитики",
+                src: "/projects/photo-1.png",
+            },
+            {
+                id: 2,
+                title: "United Fashion Group 2",
+                text: "Создали систему аналитики продаж, объединяющую данные из 1С, WB и Ozon.",
+                url: "#",
+                category: "Экономический анализ",
+                src: "/projects/photo-2.png",
+            },
+            {
+                id: 3,
+                title: "United Fashion Group 3",
+                text: "Создали систему аналитики продаж, объединяющую данные из 1С, WB и Ozon.",
+                url: "#",
+                category: "Финансовые модели и бизнес-планы",
+                src: "/projects/photo-3.png",
+            },
+            {
+                id: 4,
+                title: "United Fashion Group 4",
+                text: "Создали систему аналитики продаж, объединяющую данные из 1С, WB и Ozon.",
+                url: "#",
+                category: "Бенчмарк исследования",
+                src: "/projects/photo-4.png",
+            },
+        ],
+    },
     partners: {
         title: "Работаем с компаниями среднего и крупного бизнеса",
         logos: [
@@ -210,7 +247,7 @@ export default function Main() {
 
             <SectionServices data={data.services} />
 
-            <SectionProjects />
+            <SectionProjects data={data.projects} />
 
             <SectionPartners data={data.partners} />
 

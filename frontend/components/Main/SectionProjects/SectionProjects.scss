@@ -1,1 +1,133 @@
 @use "@/styles/media-breakpoints" as *;
+
+@keyframes fade {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+        visibility: hidden;
+        pointer-events: none;
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        visibility: visible;
+        pointer-events: all;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+        visibility: visible;
+        pointer-events: all;
+    }
+    to {
+        opacity: 0;
+        transform: translateY(15px);
+        visibility: hidden;
+        pointer-events: none;
+    }
+}
+
+.fade {
+    animation: fade 0.7s ease;
+}
+
+.section-projects {
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    &__text-content {
+        .subtitle {
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 140%;
+        }
+
+        .button-link {
+            margin-top: 30px;
+        }
+    }
+
+    &__slider {
+        height: 356px;
+        width: 100%;
+    }
+
+    &__slider-pagination {
+        position: absolute;
+        right: 0 !important;
+        left: auto;
+        top: auto !important;
+        bottom: calc(100% + 30px);
+        transform: none !important;
+        gap: 5px;
+
+        .swiper-pagination-bullet {
+            width: 8px;
+            height: 8px;
+            background: rgba(255, 255, 255, 0.5);
+            transition: background var(--trans);
+        }
+
+        .swiper-pagination-bullet-active {
+            background: var(--color-white);
+        }
+    }
+
+    &__slider-slide {
+        border-radius: 20px;
+
+        img {
+            object-fit: cover;
+        }
+    }
+
+    &__slider-link {
+        padding: 20px 27px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 15px;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 100%;
+        margin-top: 20px;
+        border-radius: 20px;
+        background: var(--color-blue-20);
+        opacity: 0;
+        transform: translateY(15px);
+        visibility: hidden;
+        pointer-events: none;
+        animation: fadeOut 0.3s ease forwards;
+
+        &.active {
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        span {
+            flex: 0 0 24px;
+            width: 24px;
+            height: 24px;
+        }
+    }
+}

@@ -13,12 +13,11 @@ export default function SectionProjects({ data }: { data: object }) {
     return (
         <section className="section section-projects">
             <div className="container section-projects__container">
-                <h2 className="title">{data.title}</h2>
-
                 <div className="section-projects__wrapper">
                     {data.list?.length > 0 && (
                         <>
                             <SectionProjectsTextContent
+                                title={data.title}
                                 slide={data.list[active]}
                             />
 

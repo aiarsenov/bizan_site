@@ -50,27 +50,66 @@
         display: flex;
         flex-direction: column;
         gap: 30px;
+
+        @media (min-width: $media-xl) {
+            display: grid;
+            grid-template-columns: 31% 1fr;
+            gap: 20px;
+        }
     }
 
     &__text-content {
+        position: relative;
+
         .subtitle {
             margin-bottom: 20px;
+
+            @media (min-width: $media-md) {
+                max-width: 520px;
+            }
+
+            @media (min-width: $media-xl) {
+                max-width: none;
+                margin-bottom: 30px;
+            }
         }
 
         p {
             font-weight: 400;
             font-size: 14px;
             line-height: 140%;
+
+            @media (min-width: $media-md) {
+                font-size: 16px;
+                max-width: 520px;
+            }
+
+            @media (min-width: $media-xl) {
+                font-size: 18px;
+                max-width: none;
+            }
+
+            @media (min-width: $media-xxxl) {
+                font-size: 20px;
+            }
         }
 
         .button-link {
             margin-top: 30px;
+
+            @media (min-width: $media-xl) {
+                margin-top: 50px;
+            }
         }
     }
 
     &__slider {
         height: 356px;
         width: 100%;
+
+        @media (min-width: $media-xl) {
+            height: 570px;
+        }
     }
 
     &__slider-pagination {
@@ -78,15 +117,33 @@
         right: 0 !important;
         left: auto;
         top: auto !important;
-        bottom: calc(100% + 30px);
+        bottom: 0;
         transform: none !important;
+        display: flex;
+        flex-direction: column;
         gap: 5px;
 
+        @media (min-width: $media-xl) {
+            right: auto;
+            left: 0 !important;
+            bottom: 99px;
+            flex-direction: row;
+            align-items: center;
+            gap: 10px;
+        }
+
         .swiper-pagination-bullet {
+            flex: 0 0 8px;
             width: 8px;
             height: 8px;
             background: rgba(255, 255, 255, 0.5);
             transition: background var(--trans);
+
+            @media (min-width: $media-xl) {
+                flex: 0 0 11px;
+                width: 11px;
+                height: 11px;
+            }
         }
 
         .swiper-pagination-bullet-active {
@@ -99,6 +156,31 @@
 
         img {
             object-fit: cover;
+        }
+
+        span {
+            position: absolute;
+            display: block;
+            top: 20px;
+            left: 20px;
+            font-weight: 600;
+            font-size: 14px;
+            line-height: 120%;
+            color: var(--color-blue-0);
+            padding: 5px 10px;
+            background: var(--color-white);
+            border-radius: 10px;
+            z-index: 2;
+            opacity: 0;
+            transition: opacity var(--trans);
+
+            @media (min-width: $media-md) {
+                opacity: 1;
+            }
+
+            @media (min-width: $media-xxxl) {
+                font-size: 16px;
+            }
         }
     }
 
@@ -119,6 +201,15 @@
         visibility: hidden;
         pointer-events: none;
         animation: fadeOut 0.3s ease forwards;
+
+        @media (min-width: $media-md) {
+            font-size: 16px;
+        }
+
+        @media (min-width: $media-xl) {
+            font-size: 18px;
+            padding: 27.5px;
+        }
 
         &.active {
             animation: fadeIn 0.5s ease forwards;

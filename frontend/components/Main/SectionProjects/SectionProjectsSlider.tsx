@@ -8,9 +8,7 @@ import Link from "next/link";
 
 export default function SectionProjectsSlider({ slides, onChange, isLast }) {
     return (
-        <div className="relative">
-            <div className="section-projects__slider-pagination"></div>
-
+        <div>
             <Swiper
                 className="section-projects__slider"
                 onSlideChange={(s) => onChange(s.activeIndex)}
@@ -18,7 +16,10 @@ export default function SectionProjectsSlider({ slides, onChange, isLast }) {
                 direction={"vertical"}
                 slidesPerView={1}
                 spaceBetween={30}
-                mousewheel={true}
+                mousewheel={{
+                    forceToAxis: true,
+                    releaseOnEdges: true,
+                }}
                 effect={"creative"}
                 creativeEffect={{
                     prev: {

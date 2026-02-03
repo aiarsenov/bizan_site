@@ -133,6 +133,31 @@ const LOCAL = {
             },
         ],
     },
+    team: {
+        title: "Команда",
+        subtitle:
+            "Предпринимательский опыт, аналитические и ИТ-компетенции — в одной команде",
+        list: [
+            {
+                id: 1,
+                src: "/team/Photo-1.jpg",
+                name: "Дмитрий Колесников",
+                position: "Со-основатель и генеральный директор",
+            },
+            {
+                id: 2,
+                src: "/team/Photo-2.jpg",
+                name: "Василий Арсенов",
+                position: "Технический директор",
+            },
+            {
+                id: 3,
+                src: "/team/Photo-3.jpg",
+                name: "Алексей Васильев",
+                position: "Главный аналитик",
+            },
+        ],
+    },
     faq: {
         title: "Часто задаваемые вопросы",
         list: [
@@ -189,7 +214,7 @@ export default function Main() {
 
             <SectionPartners data={data.partners} />
 
-            <SectionTeam />
+            <SectionTeam data={data.team} />
 
             <SectionMedia data={data.media} />
 

@@ -1,0 +1,111 @@
+@use "@/styles/media-breakpoints" as *;
+
+.section-team {
+    position: relative;
+    
+    &__header {
+        @media (min-width: $media-md) {
+            max-width: 85%;
+        }
+
+        @media (min-width: $media-xl) {
+            margin-left: auto;
+            max-width: 66%;
+        }
+
+        .title,
+        .subtitle {
+            @media (min-width: $media-xl) {
+                max-width: 800px;
+            }
+        }
+    }
+
+    &__slider {
+        margin-right: -15px;
+        margin-bottom: 60px;
+
+        .swiper-wrapper {
+            padding-right: 15px;
+
+            @media (min-width: $media-md) {
+                padding-right: 20px;
+            }
+
+            @media (min-width: $media-xl) {
+                padding-right: 0;
+            }
+        }
+
+        @media (min-width: $media-md) {
+            margin-right: -20px;
+            margin-bottom: 40px;
+        }
+
+        @media (min-width: $media-xl) {
+            margin-right: 0;
+            margin-bottom: 70px;
+        }
+    }
+
+    &__read-more {
+        display: block;
+        margin: 0 auto;
+    }
+}
+
+.slider-team {
+    &__image {
+        height: 330px;
+        width: 100%;
+        border-radius: 20px;
+        margin-bottom: 20px;
+
+        @media (min-width: $media-md) {
+            height: 358px;
+            margin-bottom: 30px;
+        }
+
+        @media (min-width: $media-xl) {
+            height: 388px;
+            margin-bottom: 40px;
+        }
+
+        @media (min-width: $media-xxxl) {
+            height: 574px;
+        }
+
+        img {
+            object-fit: cover;
+        }
+    }
+
+    &__name,
+    &__position {
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 120%;
+
+        padding: 0 10px;
+
+        @media (min-width: $media-md) {
+            font-size: 20px;
+        }
+
+        @media (min-width: $media-xl) {
+            font-size: 25px;
+        }
+
+        @media (min-width: $media-xxxl) {
+            font-size: 30px;
+        }
+    }
+
+    &__name {
+        margin-bottom: 10px;
+    }
+
+    &__position {
+        color: rgba(255, 255, 255, 0.4);
+    }
+}

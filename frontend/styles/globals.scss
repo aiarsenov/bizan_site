@@ -90,6 +90,23 @@ body {
     z-index: -1;
 }
 
+.circle-bg {
+    position: absolute;
+    width: 250%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    svg {
+        width: 100%;
+        height: 100%;
+    }
+}
+
 .scroll-icon {
     background: url("../assets/icons/scroll.svg") center no-repeat;
     width: 40px;
@@ -120,7 +137,7 @@ body {
     font-weight: 500;
     font-size: 27px;
     line-height: 120%;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 
     @media (min-width: $media-md) {
         font-size: 35px;

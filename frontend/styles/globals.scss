@@ -79,15 +79,37 @@ body {
 
 .bg-active {
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
     width: 100%;
-    height: 100vh;
-    // max-height: 590px;
-    background: url("../public/bg-main.png") center no-repeat;
-    background-size: cover;
+    aspect-ratio: 360 / 691;
+    top: 42%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     z-index: -1;
+    background: center / cover no-repeat url("../public/bg-main/bg-360.png");
+
+    @media (min-width: $media-md) {
+        background: center / cover no-repeat url("../public/bg-main/bg-768.png");
+        top: 37%;
+        aspect-ratio: 768 / 776;
+    }
+
+    @media (min-width: $media-xl) {
+        background: center / cover no-repeat
+            url("../public/bg-main/bg-1280.png");
+        top: 64%;
+        aspect-ratio: 1280 / 1370;
+    }
+
+    @media (min-width: $media-xxxl) {
+        background: center / cover no-repeat
+            url("../public/bg-main/bg-1920.png");
+        top: 68%;
+        aspect-ratio: 1920 / 1616;
+    }
+
+    @media (min-width: 2560px) {
+        top: 93%;
+    }
 }
 
 .circle-bg {

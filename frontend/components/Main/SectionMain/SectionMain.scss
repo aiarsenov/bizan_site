@@ -1,6 +1,7 @@
 @use "@/styles/media-breakpoints" as *;
 
 .section-main {
+    position: relative;
     padding: 60px 0 100px;
 
     @media (min-width: $media-md) {

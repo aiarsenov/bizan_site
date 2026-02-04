@@ -4,7 +4,7 @@ import "./SectionMedia.scss";
 
 export default function SectionMedia({ data }: { data: object }) {
     return (
-        <section className="section section-media">
+        <section className="section section-media" id="media">
             <div className="container section-media__container">
                 <h2 className="title">{data.title}</h2>
                 <h3 className="subtitle">{data.subtitle}</h3>

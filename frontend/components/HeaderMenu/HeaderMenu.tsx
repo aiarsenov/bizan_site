@@ -20,10 +20,7 @@ export default function HeaderMenu({
             className={`header-menu ${isActive ? "active" : ""}`}
             onClick={() => setIsActive(false)}
         >
-            <div
-                className="header-menu__wrapper menu-wrapper"
-                onClick={(evt) => evt.stopPropagation()}
-            >
+            <div className="header-menu__wrapper menu-wrapper">
                 <div className="menu-wrapper__header">
                     <Link href="/" className="menu-wrapper__logo">
                         <svg

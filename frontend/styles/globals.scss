@@ -4,6 +4,10 @@
 @import "./connected-fonts.scss";
 @import "tailwindcss";
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: "Involve", sans-serif;
     background: var(--color-blue-10);
@@ -190,17 +194,17 @@ body {
 }
 
 .section {
-    margin-bottom: 100px;
+    padding: 50px 0;
 
     @media (min-width: $media-md) {
-        margin-bottom: 120px;
+        padding: 60px 0;
     }
 
     @media (min-width: $media-xl) {
-        margin-bottom: 150px;
+        padding: 75px 0;
     }
 
     @media (min-width: $media-xxxl) {
-        margin-bottom: 200px;
+        padding: 100px 0;
     }
 }

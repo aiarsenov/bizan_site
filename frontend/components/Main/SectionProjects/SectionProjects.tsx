@@ -11,7 +11,7 @@ export default function SectionProjects({ data }: { data: object }) {
     const [active, setActive] = useState(0);
 
     return (
-        <section className="section section-projects">
+        <section className="section section-projects" id="projects">
             <div className="container section-projects__container">
                 <div className="section-projects__wrapper">
                     {data.list?.length > 0 && (

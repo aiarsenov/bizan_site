@@ -2,7 +2,7 @@ import "./SectionServices.scss";
 
 export default function SectionServices({ data }: { data: object }) {
     return (
-        <section className="section section-services">
+        <section className="section section-services" id="services">
             <div className="container section-services__container">
                 <div className="section-services__text-content">
                     <h2 className="title">{data.title}</h2>

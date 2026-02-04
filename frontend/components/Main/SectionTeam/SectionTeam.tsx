@@ -9,7 +9,7 @@ import "./SectionTeam.scss";
 
 export default function SectionTeam({ data }: { data: object }) {
     return (
-        <section className="section section-team">
+        <section className="section section-team" id="team">
             <div className="circle-bg"></div>
 
             <div className="container section-team__container">

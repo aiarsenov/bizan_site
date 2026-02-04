@@ -1,7 +1,7 @@
 "use client";
 
 import ParallaxElipses from "@/components/ui/ParallaxElipses/ParallaxElipses";
-import ButtonAction from "../../ui/buttons/ButtonAction";
+import ButtonAction from "../../ui/Buttons/ButtonAction";
 
 import "./SectionMain.scss";
 import ScrollIcon from "@/components/ui/ScrollIcon/ScrollIcon";

@@ -6,7 +6,7 @@ import Link from "next/link";
 import Menu from "../Menu/Menu";
 
 import Logo from "@/assets/logo.svg";
-import ButtonAction from "../ui/buttons/ButtonAction";
+import ButtonAction from "../ui/Buttons/ButtonAction";
 
 import "./Footer.scss";
 

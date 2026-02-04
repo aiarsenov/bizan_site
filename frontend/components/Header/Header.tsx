@@ -12,7 +12,7 @@ import "./Header.scss";
 
 import Logo from "@/assets/logo.svg";
 import Tg from "@/assets/telegram.svg";
-import ButtonAction from "../ui/buttons/ButtonAction";
+import ButtonAction from "../ui/Buttons/ButtonAction";
 
 export default function Header() {
     const [isActive, setIsActive] = useState(false);

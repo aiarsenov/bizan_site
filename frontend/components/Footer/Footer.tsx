@@ -3,14 +3,18 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { useRequestModal } from "../RequestModalContext";
+
 import Menu from "../Menu/Menu";
+import ButtonAction from "../ui/Buttons/ButtonAction";
 
 import Logo from "@/assets/logo.svg";
-import ButtonAction from "../ui/Buttons/ButtonAction";
 
 import "./Footer.scss";
 
 export default function Footer() {
+    const { open } = useRequestModal();
+
     return (
         <footer className="footer">
             <div className="container footer__container">
@@ -36,7 +40,7 @@ export default function Footer() {
                         <ButtonAction
                             label="Написать"
                             className="footer__button-action"
-                            onClick={() => console.log("Написать")}
+                            onClick={open}
                         />
                     </div>
 

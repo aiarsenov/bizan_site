@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 
+import { useRequestModal } from "@/components/RequestModalContext";
+
 import ButtonAction from "../Buttons/ButtonAction";
 import FormInput from "../Form/FormInput";
 import FormPhoneInput from "../Form/FormPhoneInput";
@@ -14,6 +16,8 @@ export default function RequestModal({
 }: {
     isActive: boolean;
 }) {
+    const { close } = useRequestModal();
+
     return (
         <div className={`modal ${isActive ? "active" : ""}`}>
             <div className="modal__wrapper">
@@ -24,6 +28,7 @@ export default function RequestModal({
                         className="modal__close-btn"
                         type="button"
                         title="Закрыть модальное окно"
+                        onClick={close}
                     ></button>
                 </div>
 
@@ -58,15 +63,15 @@ export default function RequestModal({
                             onChange={(val) => console.log(val)}
                         />
 
-                        <div>
+                        <div className="modal-form__action">
                             <ButtonAction
                                 label="Отправить"
                                 title="Отправить заявку"
                                 onClick={() => console.log("click")}
                             />
 
-                            <div>
-                                Нажимая кнопку, я соглашаюсь на
+                            <div className="modal-form__agreement">
+                                Нажимая кнопку, я соглашаюсь <br /> на
                                 <a href="#">
                                     обработку моих персональных данных
                                 </a>

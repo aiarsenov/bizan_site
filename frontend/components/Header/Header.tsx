@@ -2,19 +2,23 @@
 
 import { useState } from "react";
 
+import { useRequestModal } from "../RequestModalContext";
+
 import Image from "next/image";
 import Link from "next/link";
 
 import Menu from "../Menu/Menu";
 import HeaderMenu from "../HeaderMenu/HeaderMenu";
 
-import "./Header.scss";
-
 import Logo from "@/assets/logo.svg";
 import Tg from "@/assets/telegram.svg";
 import ButtonAction from "../ui/Buttons/ButtonAction";
 
+import "./Header.scss";
+
 export default function Header() {
+    const { open } = useRequestModal();
+
     const [isActive, setIsActive] = useState(false);
 
     return (
@@ -55,7 +59,7 @@ export default function Header() {
                     <ButtonAction
                         label="Обсудить проект"
                         className="header__button-action"
-                        onClick={() => console.log("Обсудить проект")}
+                        onClick={open}
                     />
 
                     <button

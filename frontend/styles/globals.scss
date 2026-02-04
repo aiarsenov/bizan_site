@@ -208,3 +208,14 @@ body {
         padding: 100px 0;
     }
 }
+
+.logo {
+    width: 84px;
+    flex: 0 0 84px;
+    height: 26px;
+    background: url("../assets/logo.svg") center no-repeat;
+
+    &_black {
+        background: url("../assets/logo-black.svg") center no-repeat;
+    }
+}

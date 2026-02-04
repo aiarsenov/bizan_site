@@ -1,12 +1,16 @@
 "use client";
 
+import { useRequestModal } from "@/components/RequestModalContext";
+
 import ParallaxElipses from "@/components/ui/ParallaxElipses/ParallaxElipses";
 import ButtonAction from "../../ui/Buttons/ButtonAction";
-
-import "./SectionMain.scss";
 import ScrollIcon from "@/components/ui/ScrollIcon/ScrollIcon";
 
+import "./SectionMain.scss";
+
 export default function SectionMain({ data }: { data: object }) {
+    const { open } = useRequestModal();
+
     return (
         <section className="section-main">
             <div className="bg-active"></div>
@@ -36,7 +40,7 @@ export default function SectionMain({ data }: { data: object }) {
                 <ButtonAction
                     label="Обсудить проект"
                     className="section-main__button-action"
-                    onClick={() => console.log("Обсудить проект")}
+                    onClick={open}
                 />
 
                 <div className="scroll-icon__wrapper">

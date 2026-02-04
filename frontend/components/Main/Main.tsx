@@ -13,7 +13,6 @@ import SectionMedia from "./SectionMedia/SectionMedia";
 import FAQ from "../FAQ/FAQ";
 
 import "./Main.scss";
-import RequestModal from "../ui/Modals/RequestModal";
 
 const LOCAL = {
     hero: {
@@ -229,7 +228,6 @@ const LOCAL = {
 
 export default function Main() {
     const [data, setData] = useState(LOCAL);
-    const [requestModalIsActive, setRequestModalIsActive] = useState(true);
 
     useEffect(() => {
         const loadData = async () => {
@@ -258,8 +256,6 @@ export default function Main() {
             <SectionMedia data={data.media} />
 
             <FAQ data={data.faq} />
-
-            <RequestModal isActive={requestModalIsActive} />
         </main>
     );
 }

@@ -1,0 +1,123 @@
+.modal {
+    position: fixed;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    align-items: center;
+    justify-content: center;
+    z-index: -1;
+    visibility: hidden;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity var(--trans);
+
+    &.active {
+        z-index: 99;
+        visibility: visible;
+        pointer-events: all;
+        opacity: 1;
+    }
+
+    &__wrapper {
+        position: fixed;
+        inset: 0;
+        height: 100%;
+        width: 100%;
+        background: var(--color-white);
+        color: var(--color-blue-0);
+        padding: 0 15px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__header {
+        padding: 20px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__footer {
+        padding: 20px 0;
+        display: flex;
+        align-items: center;
+        gap: 30px;
+
+        &-link {
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 140%;
+        }
+    }
+
+    &__close-btn {
+        height: 24px;
+        width: 24px;
+        flex: 0 0 24px;
+        background: url("../../../assets/icons/close.svg") center no-repeat;
+    }
+
+    &__body {
+        flex-grow: 1;
+        padding: 30px 0;
+    }
+
+    &__title {
+        font-weight: 500;
+        font-size: 27px;
+        line-height: 120%;
+        margin-bottom: 15px;
+    }
+
+    &__subtitle {
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 140%;
+        margin-bottom: 30px;
+    }
+}
+
+.modal-form {
+    &__action {
+        width: 100%;
+
+        .button-action {
+            width: 100%;
+            margin: 0 auto 20px;
+        }
+    }
+
+    &__agreement {
+        text-align: center;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 130%;
+        color: rgba(0, 0, 0, 0.7);
+
+        a {
+            display: inline-block;
+            position: relative;
+            width: fit-content;
+            margin-left: 5px;
+
+            &:hover {
+                &::after {
+                    background: transparent;
+                }
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                height: 1px;
+                width: 100%;
+                left: 50%;
+                bottom: -1px;
+                transform: translateX(-50%);
+                background: rgba(0, 0, 0, 0.1);
+                transition: background var(--trans);
+            }
+        }
+    }
+}

@@ -38,8 +38,8 @@ export default function HeaderMenu({
                                 fill="#0D1019"
                             />
                             <path
-                                fill-rule="evenodd"
-                                clip-rule="evenodd"
+                                fillRule="evenodd"
+                                clipRule="evenodd"
                                 d="M8.429 22.793v-3.12h-.161a5.152 5.152 0 01-5.15-5.153 5.151 5.151 0 015.15-5.153 5.152 5.152 0 015.15 5.153v.162h3.117v-.162c0-4.568-3.701-8.272-8.267-8.272C3.702 6.248 0 9.952 0 14.52c0 4.569 3.702 8.273 8.268 8.273h.16z"
                                 fill="#0D1019"
                             />

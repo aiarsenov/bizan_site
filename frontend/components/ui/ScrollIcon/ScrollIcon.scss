@@ -1,0 +1,52 @@
+@use "@/styles/media-breakpoints" as *;
+
+.scroll-icon {
+    position: relative;
+    width: 40px;
+    height: 40px;
+
+    &__mouse {
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        height: 28px;
+    }
+
+    &__arrows {
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        left: calc(50% + 0.9px);
+        top: 35.5px;
+        transform: translate(-50%, -50%);
+        will-change: transform;
+
+        @media (min-width: $media-xxxl) {
+            animation: slide-loop 1.2s ease-in-out infinite;
+        }
+    }
+}
+
+@keyframes slide-loop {
+    0% {
+        transform: translate(-50%, 0);
+        opacity: 1;
+    }
+
+    40% {
+        transform: translate(-50%, 8px);
+        opacity: 0;
+    }
+
+    41% {
+        transform: translate(-50%, -8px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translate(-50%, 0);
+        opacity: 1;
+    }
+}

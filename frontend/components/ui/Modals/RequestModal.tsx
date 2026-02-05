@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 
+import { useBodyScrollLock } from "@/hooks/useBodyScrollLock.js";
 import { useRequestModal } from "@/components/RequestModalContext";
 
 import Link from "next/link";
@@ -30,6 +31,7 @@ export default function RequestModal({
         phone: false,
     });
 
+    // Валидация формы
     const handleValidate = () => {
         const errors = {
             name: !modalData.name?.trim(),
@@ -42,16 +44,20 @@ export default function RequestModal({
         return !Object.values(errors).some(Boolean);
     };
 
+    // Отправка формы
     const handleSubmit = () => {
         if (!handleValidate()) return;
     };
 
+    // Обработка ввода
     const handleChange = (name, value) => {
         setModalData((prev) => ({
             ...prev,
             [name]: value,
         }));
     };
+
+    useBodyScrollLock(isActive); // Блокируем экран при открытии попапа
 
     return (
         <div className={`modal ${isActive ? "active" : ""}`} onClick={close}>

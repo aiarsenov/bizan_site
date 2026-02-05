@@ -14,8 +14,8 @@ export default function FormTextarea({
     value: string;
     placeholder: string;
     minHeight?: number;
-    isError: boolean;
-    onChange?: (value: string) => void;
+    isError?: boolean;
+    onChange: (value: string) => void;
     onBlur?: () => void;
     isDisabled?: boolean;
 }) {

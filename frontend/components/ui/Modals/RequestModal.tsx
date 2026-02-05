@@ -19,7 +19,11 @@ export default function RequestModal({
 }) {
     const { close } = useRequestModal();
 
-    const [modalData, setModalData] = useState({});
+    const [modalData, setModalData] = useState({
+        name: "",
+        phone: "",
+        message: "",
+    });
 
     const handleChange = (name, value) => {
         setModalData((prev) => ({
@@ -29,8 +33,11 @@ export default function RequestModal({
     };
 
     return (
-        <div className={`modal ${isActive ? "active" : ""}`}>
-            <div className="modal__wrapper">
+        <div className={`modal ${isActive ? "active" : ""}`} onClick={close}>
+            <div
+                className="modal__wrapper"
+                onClick={(evt) => evt.stopPropagation()}
+            >
                 <div className="modal__header">
                     <Link href="/" className="logo logo_black" />
 
@@ -96,6 +103,8 @@ export default function RequestModal({
                 </div>
 
                 <div className="modal__footer">
+                    <Link href="/" className="logo logo_black" />
+
                     <a
                         href="https://t.me/bizanpro"
                         className="modal__footer-link"

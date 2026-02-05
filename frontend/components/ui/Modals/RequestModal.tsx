@@ -1,9 +1,10 @@
 "use client";
 
-import Link from "next/link";
+import { useState } from "react";
 
 import { useRequestModal } from "@/components/RequestModalContext";
 
+import Link from "next/link";
 import ButtonAction from "../Buttons/ButtonAction";
 import FormInput from "../Form/FormInput";
 import FormPhoneInput from "../Form/FormPhoneInput";
@@ -17,6 +18,15 @@ export default function RequestModal({
     isActive: boolean;
 }) {
     const { close } = useRequestModal();
+
+    const [modalData, setModalData] = useState({});
+
+    const handleChange = (name, value) => {
+        setModalData((prev) => ({
+            ...prev,
+            [name]: value,
+        }));
+    };
 
     return (
         <div className={`modal ${isActive ? "active" : ""}`}>
@@ -42,25 +52,30 @@ export default function RequestModal({
                     </div>
 
                     <form className="modal-form">
-                        <FormInput
-                            value={""}
-                            placeholder={""}
-                            isError={false}
-                            onChange={(val) => console.log(val)}
-                        />
+                        <div className="flex-row">
+                            <FormInput
+                                htmlFor="name"
+                                value={modalData.name}
+                                placeholder="Имя*"
+                                isError={false}
+                                type="text"
+                                onChange={(val) => handleChange("name", val)}
+                            />
 
-                        <FormPhoneInput
-                            value={""}
-                            placeholder={""}
-                            isError={false}
-                            onChange={(val) => console.log(val)}
-                        />
+                            <FormPhoneInput
+                                htmlFor="phone"
+                                value={modalData.phone}
+                                placeholder="Телефон*"
+                                isError={false}
+                                onChange={(val) => handleChange("phone", val)}
+                            />
+                        </div>
 
                         <FormTextarea
-                            value={""}
-                            placeholder={""}
+                            value={modalData.message}
+                            placeholder="Сообщение"
                             isError={false}
-                            onChange={(val) => console.log(val)}
+                            onChange={(val) => handleChange("message", val)}
                         />
 
                         <div className="modal-form__action">

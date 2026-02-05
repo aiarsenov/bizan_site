@@ -79,7 +79,18 @@
 }
 
 .modal-form {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+
+    .flex-row {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
     &__action {
+        margin-top: 10px;
         width: 100%;
 
         .button-action {

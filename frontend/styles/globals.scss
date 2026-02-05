@@ -1,7 +1,10 @@
 @use "@/styles/media-breakpoints" as *;
-@import "./variables.scss";
+
 @import "./reset.scss";
+@import "./variables.scss";
 @import "./connected-fonts.scss";
+@import "../components/ui/Form/Form.scss";
+
 @import "tailwindcss";
 
 html {

@@ -1,15 +1,22 @@
 @use "@/styles/media-breakpoints" as *;
 
 .footer {
+    margin-top: 50px;
     padding: 40px 0 20px;
     background: var(--color-blue-0);
 
     @media (min-width: $media-md) {
         padding: 60px 0 20px;
+        margin-top: 60px;
     }
 
     @media (min-width: $media-xl) {
         padding: 80px 0 40px;
+        margin-top: 75px;
+    }
+
+    @media (min-width: $media-xxxl) {
+        margin-top: 100px;
     }
 
     &__logo {

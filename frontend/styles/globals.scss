@@ -222,3 +222,13 @@ body {
         background: url("../assets/logo-black.svg") center no-repeat;
     }
 }
+
+.message {
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 130%;
+
+    &_error {
+        color: var(--color-red);
+    }
+}

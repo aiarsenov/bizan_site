@@ -13,12 +13,22 @@
             border-bottom: 2px solid rgba(0, 0, 0, 0.1);
             transition: border var(--trans);
 
+            @media (min-width: $media-xxxl) {
+                font-size: 18px;
+            }
+
             &:focus {
                 border-bottom: 2px solid var(--color-blue-40);
             }
 
             &::placeholder {
                 color: var(--color-blue-0);
+            }
+        }
+
+        &_error {
+            input {
+                border-bottom: 2px solid var(--color-red);
             }
         }
     }
@@ -35,6 +45,14 @@
         color: var(--color-blue-0);
         border-bottom: 2px solid rgba(0, 0, 0, 0.1);
         transition: border var(--trans);
+
+        &_error {
+            border-bottom: 2px solid var(--color-red);
+        }
+
+        @media (min-width: $media-xxxl) {
+            font-size: 18px;
+        }
 
         &:focus {
             border-bottom: 2px solid var(--color-blue-40);

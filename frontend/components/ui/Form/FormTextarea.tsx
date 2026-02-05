@@ -36,7 +36,7 @@ export default function FormTextarea({
     return (
         <textarea
             ref={textareaRef}
-            className={`form-textarea ${isError ? "form__input_error" : ""}`}
+            className={`form-textarea ${isError ? "form-textarea_error" : ""}`}
             value={value ?? ""}
             onChange={(event) => onChange?.(event.target.value)}
             onBlur={onBlur}

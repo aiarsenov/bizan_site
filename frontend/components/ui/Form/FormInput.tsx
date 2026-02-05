@@ -22,7 +22,7 @@ export default function FormInput({
     return (
         <label
             htmlFor={htmlFor}
-            className={`form-input ${isError ? "form__input_error" : ""}`}
+            className={`form-input ${isError ? "form-input_error" : ""}`}
         >
             <input
                 type={type}

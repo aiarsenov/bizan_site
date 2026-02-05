@@ -15,6 +15,10 @@
         &:hover {
             background: var(--color-purple);
         }
+
+        @media (min-width: $media-xl) {
+            padding: 18px 30px;
+        }
     }
 
     &-link {

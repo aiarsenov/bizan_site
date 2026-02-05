@@ -25,6 +25,27 @@ export default function RequestModal({
         message: "",
     });
 
+    const [isError, setIsError] = useState({
+        name: false,
+        phone: false,
+    });
+
+    const handleValidate = () => {
+        const errors = {
+            name: !modalData.name?.trim(),
+            phone:
+                !modalData.phone?.trim() || modalData.phone?.trim().length < 18,
+        };
+
+        setIsError(errors);
+
+        return !Object.values(errors).some(Boolean);
+    };
+
+    const handleSubmit = () => {
+        if (!handleValidate()) return;
+    };
+
     const handleChange = (name, value) => {
         setModalData((prev) => ({
             ...prev,
@@ -64,7 +85,7 @@ export default function RequestModal({
                                 htmlFor="name"
                                 value={modalData.name}
                                 placeholder="Имя*"
-                                isError={false}
+                                isError={isError.name}
                                 type="text"
                                 onChange={(val) => handleChange("name", val)}
                             />
@@ -73,7 +94,7 @@ export default function RequestModal({
                                 htmlFor="phone"
                                 value={modalData.phone}
                                 placeholder="Телефон*"
-                                isError={false}
+                                isError={isError.phone}
                                 onChange={(val) => handleChange("phone", val)}
                             />
                         </div>
@@ -81,15 +102,20 @@ export default function RequestModal({
                         <FormTextarea
                             value={modalData.message}
                             placeholder="Сообщение"
-                            isError={false}
                             onChange={(val) => handleChange("message", val)}
                         />
+
+                        {Object.values(isError).some(Boolean) && (
+                            <div className="message message_error">
+                                Заполните важные поля*
+                            </div>
+                        )}
 
                         <div className="modal-form__action">
                             <ButtonAction
                                 label="Отправить"
                                 title="Отправить заявку"
-                                onClick={() => console.log("click")}
+                                onClick={handleSubmit}
                             />
 
                             <div className="modal-form__agreement">

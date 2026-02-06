@@ -60,16 +60,19 @@ export default function Menu() {
 
     return (
         <nav className="menu">
-            {items.map((item) => (
-                <a
-                    className="menu__item"
-                    href={item.attributes.url}
-                    aria-label={item.attributes.title}
-                    key={item.id}
-                >
-                    {item.attributes.title}
-                </a>
-            ))}
+            {items?.length > 0 &&
+                items
+                    ?.filter((item) => item?.attributes?.isVisible)
+                    .map((item) => (
+                        <a
+                            key={item.id}
+                            className="menu__item"
+                            href={item.attributes.url}
+                            aria-label={item.attributes.title}
+                        >
+                            {item.attributes.title}
+                        </a>
+                    ))}
         </nav>
     );
 }

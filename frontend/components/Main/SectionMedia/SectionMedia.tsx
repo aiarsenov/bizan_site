@@ -31,9 +31,9 @@ export default function SectionMedia({ data }: { data: object }) {
                             ))}
                     </ul>
 
-                    <Link href="#" className="button-link section-media__read-more">
+                    {/* <Link href="#" className="button-link section-media__read-more">
                         Смотреть другие публикации
-                    </Link>
+                    </Link> */}
                 </div>
             </div>
         </section>

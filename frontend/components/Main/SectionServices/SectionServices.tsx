@@ -14,14 +14,14 @@ export default function SectionServices({ data }: { data: object }) {
                         data.list?.map((item) => (
                             <li key={item.id}>
                                 <a
-                                    href={item.url}
+                                    // href={item.url}
                                     className="section-services__list-item"
                                 >
                                     <strong>{item.title}</strong>
 
                                     <p>{item.subtitle}</p>
 
-                                    <div className="section-services__list-item-icon">
+                                    {/* <div className="section-services__list-item-icon">
                                         <svg
                                             width="16"
                                             height="12"
@@ -37,7 +37,7 @@ export default function SectionServices({ data }: { data: object }) {
                                                 strokeLinejoin="round"
                                             />
                                         </svg>
-                                    </div>
+                                    </div> */}
                                 </a>
                             </li>
                         ))}

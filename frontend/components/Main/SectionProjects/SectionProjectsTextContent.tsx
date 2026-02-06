@@ -8,9 +8,9 @@ export default function SectionProjectsTextContent({ title, slide }) {
 
                 <p>{slide.text}</p>
 
-                <a href={slide.url} className="button-link">
+                {/* <a href={slide.url} className="button-link">
                     Подробнее о проекте
-                </a>
+                </a> */}
             </div>
 
             <div className="section-projects__slider-pagination"></div>

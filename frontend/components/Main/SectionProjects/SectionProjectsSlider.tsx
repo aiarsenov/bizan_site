@@ -50,8 +50,11 @@ export default function SectionProjectsSlider({ slides, onChange, isLast }) {
 
             <Link
                 href="#"
+                // className={`section-projects__slider-link ${
+                //     isLast ? "active" : ""
+                // }`}
                 className={`section-projects__slider-link ${
-                    isLast ? "active" : ""
+                    isLast ? "" : ""
                 }`}
             >
                 Больше проектов

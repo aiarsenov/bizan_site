@@ -56,9 +56,9 @@ export default function SectionTeam({ data }: { data: object }) {
                     )}
                 </div>
 
-                <Link href="#" className="button-link section-team__read-more">
+                {/* <Link href="#" className="button-link section-team__read-more">
                     Больше о команде
-                </Link>
+                </Link> */}
             </div>
         </section>
     );

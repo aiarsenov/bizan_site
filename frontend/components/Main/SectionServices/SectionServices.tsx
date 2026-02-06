@@ -5,10 +5,10 @@ import "./SectionServices.scss";
 export default function SectionServices({ data }: { data: object }) {
     return (
         <motion.div
-            initial={{ opacity: 0, y: 100 }}
+            initial={{ opacity: 0, y: -150 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.4 }}
+            viewport={{ once: true, amount: 0.5 }}
         >
             <section className="section section-services" id="services">
                 <div className="container section-services__container">

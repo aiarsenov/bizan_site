@@ -2,7 +2,7 @@ async function postData(method = "POST", url = "", data = {}) {
     try {
         const response = await fetch(url, {
             method,
-            body: JSON.stringify(data),
+            body: JSON.stringify({ data }),
             headers: {
                 "Content-Type": "application/json",
                 Accept: "application/json",

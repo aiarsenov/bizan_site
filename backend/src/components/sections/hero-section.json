@@ -16,7 +16,7 @@
     },
     "stats": {
       "type": "component",
-      "repeatable": false,
+      "repeatable": true,
       "component": "sections.stats"
     }
   }

@@ -13,6 +13,14 @@
     "excerpt": {
       "type": "text"
     },
+    "source": {
+      "type": "string",
+      "required": false
+    },
+    "read_time": {
+      "type": "string",
+      "required": false
+    },
     "publishedDate": {
       "type": "date"
     },

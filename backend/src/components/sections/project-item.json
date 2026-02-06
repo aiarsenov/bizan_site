@@ -13,6 +13,10 @@
     "description": {
       "type": "text"
     },
+    "category": {
+      "type": "string",
+      "required": false
+    },
     "image": {
       "type": "media",
       "multiple": false,

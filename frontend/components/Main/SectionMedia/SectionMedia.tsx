@@ -11,11 +11,11 @@ export default function SectionMedia({ data }: { data: object }) {
 
                 <div className="section-media__content">
                     <ul className="section-media__content-list media-list">
-                        {data.posts?.length > 0 &&
-                            data.posts?.map((item) => (
+                        {data.list?.length > 0 &&
+                            data.list?.map((item) => (
                                 <li key={item.id}>
                                     <Link
-                                        href={item.url}
+                                        href={item.link}
                                         className="media-list__item"
                                     >
                                         <div className="media-list__item-header">

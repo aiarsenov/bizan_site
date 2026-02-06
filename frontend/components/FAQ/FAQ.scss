@@ -53,22 +53,27 @@
             align-items: flex-start;
             justify-content: space-between;
             gap: 15px;
-            font-weight: 500;
-            font-size: 16px;
-            line-height: 130%;
+
             cursor: pointer;
 
-            @media (min-width: $media-md) {
-                font-size: 18px;
-            }
+            b {
+                font-weight: 500;
+                font-size: 16px;
+                line-height: 130%;
+                margin-top: 9px;
 
-            @media (min-width: $media-xl) {
-                gap: 40px;
-                font-size: 20px;
-            }
+                @media (min-width: $media-md) {
+                    font-size: 18px;
+                }
 
-            @media (min-width: $media-xxxl) {
-                font-size: 25px;
+                @media (min-width: $media-xl) {
+                    gap: 40px;
+                    font-size: 20px;
+                }
+
+                @media (min-width: $media-xxxl) {
+                    font-size: 25px;
+                }
             }
         }
 

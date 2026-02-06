@@ -6,7 +6,7 @@ export default function SectionProjectsTextContent({ title, slide }) {
             <div key={slide.id} className="fade">
                 <h3 className="subtitle">{slide.title}</h3>
 
-                <p>{slide.text}</p>
+                <p>{slide.description}</p>
 
                 {/* <a href={slide.url} className="button-link">
                     Подробнее о проекте

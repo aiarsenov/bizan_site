@@ -228,34 +228,51 @@ const LOCAL = {
 
 export default function Main() {
     const [data, setData] = useState(LOCAL);
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         const loadData = async () => {
             const response = await getHomePage();
 
-            if (response.data) {
-                setData(response.data);
+            console.log(response);
+
+            if (response) {
+                setData(response);
+                setIsLoading(false);
             }
         };
 
         loadData();
     }, []);
 
+    if (isLoading)
+        return (
+            <main
+                className="main"
+                style={{
+                    background: "var(--color-blue-10)",
+                    position: "fixed",
+                    inset: 0,
+                    zIndex: 100,
+                }}
+            ></main>
+        );
+
     return (
         <main className="main">
-            <SectionMain data={data.hero} />
+            {data?.hero && <SectionMain data={data?.hero} />}
 
-            <SectionServices data={data.services} />
+            {data?.services && <SectionServices data={data?.services} />}
 
-            <SectionProjects data={data.projects} />
+            {data?.projects && <SectionProjects data={data?.projects} />}
 
-            <SectionPartners data={data.partners} />
+            {data?.partners && <SectionPartners data={data?.partners} />}
 
-            <SectionTeam data={data.team} />
+            {data?.team && <SectionTeam data={data?.team} />}
 
-            <SectionMedia data={data.media} />
+            {data?.media && <SectionMedia data={data?.media} />}
 
-            <FAQ data={data.faq} />
+            {data?.faq && <FAQ data={data?.faq} />}
         </main>
     );
 }

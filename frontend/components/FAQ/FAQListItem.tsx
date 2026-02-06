@@ -11,14 +11,14 @@ export default function FAQListItem({ item }: { item: object }) {
                 className="faq-list__item-header"
                 onClick={() => setIsOpen((prev) => !prev)}
             >
-                {item.title}
+                <b>{item.question}</b>
 
                 <div className="faq-list__item-icon"></div>
             </div>
             <div
                 className="faq-list__item-footer"
                 dangerouslySetInnerHTML={{
-                    __html: item.text,
+                    __html: item.answer,
                 }}
             />
         </li>

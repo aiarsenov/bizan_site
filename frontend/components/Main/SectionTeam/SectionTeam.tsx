@@ -40,7 +40,7 @@ export default function SectionTeam({ data }: { data: object }) {
                                     className="slider-team__slide"
                                 >
                                     <div className="image slider-team__image">
-                                        <img src={slide.src} alt={slide.name} />
+                                        <img src={slide.photo} alt={slide.name} />
                                     </div>
 
                                     <div className="slider-team__name">

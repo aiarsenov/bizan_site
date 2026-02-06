@@ -20,15 +20,15 @@ export default function SectionMain({ data }: { data: object }) {
                 <div className="section-main__top">
                     <h1
                         className="section-main__title"
-                        dangerouslySetInnerHTML={{ __html: data.title }}
+                        dangerouslySetInnerHTML={{ __html: data?.title }}
                     />
 
-                    <p>{data.subtitle}</p>
+                    <p>{data?.subtitle}</p>
                 </div>
 
-                {data.stats && data.stats?.length > 0 && (
+                {data?.stats && data?.stats?.length > 0 && (
                     <ul className="section-main__stats">
-                        {data.stats.map((item, index) => (
+                        {data?.stats.map((item, index) => (
                             <li key={index}>
                                 <strong>{item.title}</strong>
                                 <small>{item.subtitle}</small>

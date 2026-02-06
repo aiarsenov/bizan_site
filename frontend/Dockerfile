@@ -12,6 +12,11 @@ RUN npm install --production
 # 2. Сборка приложения
 FROM base AS builder
 WORKDIR /app
+
+# Принимаем build argument для NEXT_PUBLIC_STRAPI_URL
+ARG NEXT_PUBLIC_STRAPI_URL
+ENV NEXT_PUBLIC_STRAPI_URL=${NEXT_PUBLIC_STRAPI_URL}
+
 COPY package*.json ./
 RUN npm install
 COPY . .

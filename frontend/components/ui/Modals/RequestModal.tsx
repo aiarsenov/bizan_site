@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { useBodyScrollLock } from "@/hooks/useBodyScrollLock.js";
 import { useRequestModal } from "@/components/RequestModalContext";
@@ -10,6 +10,7 @@ import ButtonAction from "../Buttons/ButtonAction";
 import FormInput from "../Form/FormInput";
 import FormPhoneInput from "../Form/FormPhoneInput";
 import FormTextarea from "../Form/FormTextarea";
+import ModalResult from "./ModalResult";
 
 import "./Modals.scss";
 
@@ -31,6 +32,8 @@ export default function RequestModal({
         phone: false,
     });
 
+    const [resultType, setResultType] = useState(null);
+
     // Валидация формы
     const handleValidate = () => {
         const errors = {
@@ -47,6 +50,8 @@ export default function RequestModal({
     // Отправка формы
     const handleSubmit = () => {
         if (!handleValidate()) return;
+
+        setResultType("success");
     };
 
     // Обработка ввода
@@ -56,6 +61,15 @@ export default function RequestModal({
             [name]: value,
         }));
     };
+
+    useEffect(() => {
+        setResultType(null);
+        setModalData({
+            name: "",
+            phone: "",
+            message: "",
+        });
+    }, [isActive]);
 
     useBodyScrollLock(isActive); // Блокируем экран при открытии попапа
 
@@ -77,61 +91,73 @@ export default function RequestModal({
                 </div>
 
                 <div className="modal__body">
-                    <div className="modal__title">
-                        Расскажите <br /> о вашем проекте
-                    </div>
-                    <div className="modal__subtitle">
-                        Кратко опишите свою задачу, и мы свяжемся с вами в
-                        кратчайшие сроки
-                    </div>
-
-                    <form className="modal-form">
-                        <div className="flex-row">
-                            <FormInput
-                                htmlFor="name"
-                                value={modalData.name}
-                                placeholder="Имя*"
-                                isError={isError.name}
-                                type="text"
-                                onChange={(val) => handleChange("name", val)}
-                            />
-
-                            <FormPhoneInput
-                                htmlFor="phone"
-                                value={modalData.phone}
-                                placeholder="Телефон*"
-                                isError={isError.phone}
-                                onChange={(val) => handleChange("phone", val)}
-                            />
-                        </div>
-
-                        <FormTextarea
-                            value={modalData.message}
-                            placeholder="Сообщение"
-                            onChange={(val) => handleChange("message", val)}
-                        />
-
-                        {Object.values(isError).some(Boolean) && (
-                            <div className="message message_error">
-                                Заполните важные поля*
+                    {resultType ? (
+                        <ModalResult type={resultType} />
+                    ) : (
+                        <>
+                            <div className="modal__title">
+                                Расскажите <br /> о вашем проекте
                             </div>
-                        )}
-
-                        <div className="modal-form__action">
-                            <ButtonAction
-                                label="Отправить"
-                                title="Отправить заявку"
-                                onClick={handleSubmit}
-                            />
-
-                            <div className="modal-form__agreement">
-                                Нажимая кнопку, я соглашаюсь <br /> на
-                                <a href="#">
-                                    обработку моих персональных данных
-                                </a>
+                            <div className="modal__subtitle">
+                                Кратко опишите свою задачу, и мы свяжемся с вами
+                                в кратчайшие сроки
                             </div>
-                        </div>
-                    </form>
+
+                            <form className="modal-form">
+                                <div className="flex-row">
+                                    <FormInput
+                                        htmlFor="name"
+                                        value={modalData.name}
+                                        placeholder="Имя*"
+                                        isError={isError.name}
+                                        type="text"
+                                        onChange={(val) =>
+                                            handleChange("name", val)
+                                        }
+                                    />
+
+                                    <FormPhoneInput
+                                        htmlFor="phone"
+                                        value={modalData.phone}
+                                        placeholder="Телефон*"
+                                        isError={isError.phone}
+                                        onChange={(val) =>
+                                            handleChange("phone", val)
+                                        }
+                                    />
+                                </div>
+
+                                <FormTextarea
+                                    value={modalData.message}
+                                    placeholder="Сообщение"
+                                    onChange={(val) =>
+                                        handleChange("message", val)
+                                    }
+                                />
+
+                                {Object.values(isError).some(Boolean) && (
+                                    <div className="message message_error">
+                                        Заполните важные поля*
+                                    </div>
+                                )}
+
+                                <div className="modal-form__action">
+                                    <ButtonAction
+                                        label="Отправить"
+                                        title="Отправить заявку"
+                                        onClick={handleSubmit}
+                                    />
+
+                                    <div className="modal-form__agreement">
+                                        Нажимая кнопку, я соглашаюсь <br /> на
+                                        <a href="#">
+                                            обработку моих персональных данных
+                                        </a>
+                                    </div>
+                                </div>
+                            </form>
+                        </>
+                    )}
                 </div>
 
                 <div className="modal__footer">

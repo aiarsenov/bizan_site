@@ -3,7 +3,8 @@
  */
 
 const STRAPI_URL =
-    process.env.NEXT_PUBLIC_STRAPI_URL || "http://localhost:1337";
+    process.env.NEXT_PUBLIC_STRAPI_URL || "https://dev.bizan.pro";
+// "http://localhost:1337";
 
 /**
  * Базовая функция для запросов к Strapi API

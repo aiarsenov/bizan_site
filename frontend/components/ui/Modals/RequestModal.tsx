@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 
 import { useBodyScrollLock } from "@/hooks/useBodyScrollLock.js";
 import { useRequestModal } from "@/components/RequestModalContext";
+import postData from "@/utils/postData";
 
 import Link from "next/link";
 import ButtonAction from "../Buttons/ButtonAction";
@@ -51,7 +52,17 @@ export default function RequestModal({
     const handleSubmit = () => {
         if (!handleValidate()) return;
 
-        setResultType("success");
+        return postData(
+            "POST",
+            `${process.env.NEXT_PUBLIC_STRAPI_URL}/api/contact-submissions`,
+            modalData,
+        )
+            .then((response) => {
+                console.log(response);
+            })
+            .catch((error) => {
+                setResultType("error");
+            });
     };
 
     // Обработка ввода

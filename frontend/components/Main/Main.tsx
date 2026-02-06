@@ -234,8 +234,6 @@ export default function Main() {
         const loadData = async () => {
             const response = await getHomePage();
 
-            console.log(response);
-
             if (response) {
                 setData(response);
                 setIsLoading(false);

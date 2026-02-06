@@ -1,27 +1,35 @@
+import { motion } from "framer-motion";
+
 import "./SectionServices.scss";
 
 export default function SectionServices({ data }: { data: object }) {
     return (
-        <section className="section section-services" id="services">
-            <div className="container section-services__container">
-                <div className="section-services__text-content">
-                    <h2 className="title">{data.title}</h2>
-                    <h3 className="subtitle">{data.subtitle}</h3>
-                </div>
+        <motion.div
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true, amount: 0.3 }}
+        >
+            <section className="section section-services" id="services">
+                <div className="container section-services__container">
+                    <div className="section-services__text-content">
+                        <h2 className="title">{data.title}</h2>
+                        <h3 className="subtitle">{data.subtitle}</h3>
+                    </div>
 
-                <ul className="section-services__list">
-                    {data.list?.length > 0 &&
-                        data.list?.map((item) => (
-                            <li key={item.id}>
-                                <a
-                                    // href={item.url}
-                                    className="section-services__list-item"
-                                >
-                                    <strong>{item.title}</strong>
+                    <ul className="section-services__list">
+                        {data.list?.length > 0 &&
+                            data.list?.map((item) => (
+                                <li key={item.id}>
+                                    <a
+                                        // href={item.url}
+                                        className="section-services__list-item"
+                                    >
+                                        <strong>{item.title}</strong>
 
-                                    <p>{item.subtitle}</p>
+                                        <p>{item.subtitle}</p>
 
-                                    {/* <div className="section-services__list-item-icon">
+                                        {/* <div className="section-services__list-item-icon">
                                         <svg
                                             width="16"
                                             height="12"
@@ -38,11 +46,12 @@ export default function SectionServices({ data }: { data: object }) {
                                             />
                                         </svg>
                                     </div> */}
-                                </a>
-                            </li>
-                        ))}
-                </ul>
-            </div>
-        </section>
+                                    </a>
+                                </li>
+                            ))}
+                    </ul>
+                </div>
+            </section>
+        </motion.div>
     );
 }

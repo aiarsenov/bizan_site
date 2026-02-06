@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 
+import { motion } from "framer-motion";
+
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 
@@ -9,57 +11,67 @@ import "./SectionTeam.scss";
 
 export default function SectionTeam({ data }: { data: object }) {
     return (
-        <section className="section section-team" id="team">
-            <div className="circle-bg"></div>
+        <motion.div
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true, amount: 0.3 }}
+        >
+            <section className="section section-team" id="team">
+                <div className="circle-bg"></div>
 
-            <div className="container section-team__container">
-                <div className="section-team__header">
-                    <h2 className="title">{data.title}</h2>
-                    <h3 className="subtitle">{data.subtitle}</h3>
-                </div>
+                <div className="container section-team__container">
+                    <div className="section-team__header">
+                        <h2 className="title">{data.title}</h2>
+                        <h3 className="subtitle">{data.subtitle}</h3>
+                    </div>
 
-                <div className="section-team__slider slider-team">
-                    {data.list?.length > 0 && (
-                        <Swiper
-                            spaceBetween={10}
-                            slidesPerView={1.05}
-                            breakpoints={{
-                                768: {
-                                    slidesPerView: 2.05,
-                                    spaceBetween: 15,
-                                },
-                                1280: {
-                                    slidesPerView: 3,
-                                    spaceBetween: 20,
-                                },
-                            }}
-                        >
-                            {data.list?.map((slide) => (
-                                <SwiperSlide
-                                    key={slide.id}
-                                    className="slider-team__slide"
-                                >
-                                    <div className="image slider-team__image">
-                                        <img src={slide.photo} alt={slide.name} />
-                                    </div>
+                    <div className="section-team__slider slider-team">
+                        {data.list?.length > 0 && (
+                            <Swiper
+                                spaceBetween={10}
+                                slidesPerView={1.05}
+                                breakpoints={{
+                                    768: {
+                                        slidesPerView: 2.05,
+                                        spaceBetween: 15,
+                                    },
+                                    1280: {
+                                        slidesPerView: 3,
+                                        spaceBetween: 20,
+                                    },
+                                }}
+                            >
+                                {data.list?.map((slide) => (
+                                    <SwiperSlide
+                                        key={slide.id}
+                                        className="slider-team__slide"
+                                    >
+                                        <div className="image slider-team__image">
+                                            <img
+                                                src={slide.photo}
+                                                alt={slide.name}
+                                            />
+                                        </div>
 
-                                    <div className="slider-team__name">
-                                        {slide.name}
-                                    </div>
+                                        <div className="slider-team__name">
+                                            {slide.name}
+                                        </div>
 
-                                    <div className="slider-team__position">
-                                        {slide.position}
-                                    </div>
-                                </SwiperSlide>
-                            ))}
-                        </Swiper>
-                    )}
-                </div>
+                                        <div className="slider-team__position">
+                                            {slide.position}
+                                        </div>
+                                    </SwiperSlide>
+                                ))}
+                            </Swiper>
+                        )}
+                    </div>
 
-                {/* <Link href="#" className="button-link section-team__read-more">
+                    {/* <Link href="#" className="button-link section-team__read-more">
                     Больше о команде
                 </Link> */}
-            </div>
-        </section>
+                </div>
+            </section>
+        </motion.div>
     );
 }

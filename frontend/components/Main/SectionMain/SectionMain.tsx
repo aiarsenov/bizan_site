@@ -22,7 +22,7 @@ export default function SectionMain({ data }: { data: object }) {
         >
             <section className="section-main">
                 <div className="bg-active"></div>
-                {/* <ParallaxElipses /> */}
+                <ParallaxElipses />
 
                 <div className="container section-main__container">
                     <div className="section-main__top">

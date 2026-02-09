@@ -1,12 +1,10 @@
 "use client";
 
-import Link from "next/link";
-
 import { motion } from "framer-motion";
-
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
+import Placeholder from "@/assets/placeholder.jpg";
 
+import "swiper/css";
 import "./SectionTeam.scss";
 
 export default function SectionTeam({ data }: { data: object }) {
@@ -49,7 +47,10 @@ export default function SectionTeam({ data }: { data: object }) {
                                     >
                                         <div className="image slider-team__image">
                                             <img
-                                                src={slide.photo}
+                                                src={
+                                                    slide.photo ||
+                                                    Placeholder.src
+                                                }
                                                 alt={slide.name}
                                             />
                                         </div>

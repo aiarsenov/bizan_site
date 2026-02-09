@@ -1,10 +1,11 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import "swiper/css";
-import "swiper/css/pagination";
-
 import { Mousewheel, Pagination, EffectCreative } from "swiper/modules";
 import Link from "next/link";
+import Placeholder from "@/assets/placeholder.jpg";
+
+import "swiper/css";
+import "swiper/css/pagination";
 
 export default function SectionProjectsSlider({ slides, onChange, isLast }) {
     return (
@@ -43,7 +44,10 @@ export default function SectionProjectsSlider({ slides, onChange, isLast }) {
                     >
                         {item.category && <span>{item.category}</span>}
 
-                        <img src={item.src} alt={`${item.title} - фото`} />
+                        <img
+                            src={item.src || Placeholder.src}
+                            alt={`${item.title} - фото`}
+                        />
                     </SwiperSlide>
                 ))}
             </Swiper>
@@ -53,9 +57,7 @@ export default function SectionProjectsSlider({ slides, onChange, isLast }) {
                 // className={`section-projects__slider-link ${
                 //     isLast ? "active" : ""
                 // }`}
-                className={`section-projects__slider-link ${
-                    isLast ? "" : ""
-                }`}
+                className={`section-projects__slider-link ${isLast ? "" : ""}`}
             >
                 Больше проектов
                 <span>

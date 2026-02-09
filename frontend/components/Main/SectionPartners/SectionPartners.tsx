@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import Placeholder from "@/assets/placeholder.jpg";
 
 import "./SectionPartners.scss";
 
@@ -20,7 +21,7 @@ export default function SectionPartners({ data }: { data: object }) {
                         {data?.list?.length > 0 &&
                             data?.list?.map((item) => (
                                 <img
-                                    src={item.photo}
+                                    src={item.photo || Placeholder.src}
                                     alt={item.name}
                                     key={item.id}
                                 />

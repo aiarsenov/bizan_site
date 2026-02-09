@@ -9,7 +9,7 @@
     }
 
     @media (min-width: $media-xl) {
-        padding: 120px 0 100px;
+        padding: 120px 0 135px;
     }
 
     .scroll-icon__wrapper {
@@ -36,7 +36,6 @@
         margin-bottom: 20px;
 
         @media (min-width: $media-md) {
-            font-style: Medium;
             font-size: 55px;
             line-height: 105%;
             margin-bottom: 30px;
@@ -44,6 +43,7 @@
 
         @media (min-width: $media-xl) {
             max-width: 1200px;
+            letter-spacing: -2px;
             font-size: 75px;
             margin-bottom: 200px;
         }

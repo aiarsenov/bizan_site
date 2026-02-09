@@ -53,13 +53,14 @@
 
         @media (min-width: $media-xl) {
             display: grid;
-            grid-template-columns: 31% 1fr;
+            grid-template-columns: 32% 1fr;
             gap: 20px;
         }
     }
 
     &__text-content {
         position: relative;
+        padding-right: 8px;
 
         .subtitle {
             margin-bottom: 20px;

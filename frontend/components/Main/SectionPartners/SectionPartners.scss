@@ -27,6 +27,10 @@
         }
 
         @media (min-width: $media-xl) {
+            gap: 50px 99px;
+        }
+
+        @media (min-width: $media-xxxl) {
             gap: 50px 120px;
         }
 

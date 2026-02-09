@@ -2,7 +2,7 @@
 
 .section-team {
     position: relative;
-    
+
     &__header {
         @media (min-width: $media-md) {
             max-width: 85%;
@@ -23,7 +23,7 @@
 
     &__slider {
         margin-right: -15px;
-        margin-bottom: 60px;
+        // margin-bottom: 60px;
 
         .swiper-wrapper {
             padding-right: 15px;
@@ -39,12 +39,12 @@
 
         @media (min-width: $media-md) {
             margin-right: -20px;
-            margin-bottom: 40px;
+            // margin-bottom: 40px;
         }
 
         @media (min-width: $media-xl) {
             margin-right: 0;
-            margin-bottom: 70px;
+            // margin-bottom: 70px;
         }
     }
 

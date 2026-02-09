@@ -5,13 +5,32 @@
     width: 110%;
     max-width: 3000px;
     aspect-ratio: 535 / 800;
-    top: 0;
+    top: -2%;
     background-image: url("../../../public/Ellipse.svg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: right bottom;
     z-index: -1;
 
+    -webkit-mask-image: linear-gradient(
+        to bottom,
+        transparent 0%,
+        transparent 2%,
+        rgba(0, 0, 0, 1) 15%,
+        rgba(0, 0, 0, 1) 60%,
+        rgba(0, 0, 0, 0.6) 80%,
+        transparent 100%
+    );
+
+    mask-image: linear-gradient(
+        to bottom,
+        transparent 0%,
+        transparent 2%,
+        rgba(0, 0, 0, 1) 15%,
+        rgba(0, 0, 0, 1) 60%,
+        rgba(0, 0, 0, 0.6) 80%,
+        transparent 100%
+    );
     @media (min-width: $media-md) {
         aspect-ratio: 770 / 700;
     }
@@ -26,6 +45,6 @@
 
     @media (min-width: 2560px) {
         background-position: center;
-        aspect-ratio: 2560 / 1280;
+        aspect-ratio: 2560 / 1560;
     }
 }

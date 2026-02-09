@@ -7,9 +7,11 @@ import Footer from "@/components/Footer/Footer";
 export default async function Home() {
     return (
         <RequestModalProvider>
-            <Header />
-            <Main />
-            <Footer />
+            <div className="wrapper">
+                <Header />
+                <Main />
+                <Footer />
+            </div>
         </RequestModalProvider>
     );
 }

@@ -24,12 +24,14 @@ export default function RequestModal({
 
     const [modalData, setModalData] = useState({
         name: "",
+        email: "",
         phone: "",
         message: "",
     });
 
     const [isError, setIsError] = useState({
         name: false,
+        email: false,
         phone: false,
     });
 
@@ -37,8 +39,10 @@ export default function RequestModal({
 
     // Валидация формы
     const handleValidate = () => {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         const errors = {
             name: !modalData.name?.trim(),
+            email: !modalData.email?.trim() || !emailRegex.test(modalData.email),
             phone:
                 !modalData.phone?.trim() || modalData.phone?.trim().length < 18,
         };
@@ -77,6 +81,7 @@ export default function RequestModal({
         setResultType(null);
         setModalData({
             name: "",
+            email: "",
             phone: "",
             message: "",
         });
@@ -127,6 +132,19 @@ export default function RequestModal({
                                         }
                                     />
 
+                                    <FormInput
+                                        htmlFor="email"
+                                        value={modalData.email}
+                                        placeholder="Email*"
+                                        isError={isError.email}
+                                        type="email"
+                                        onChange={(val) =>
+                                            handleChange("email", val)
+                                        }
+                                    />
+                                </div>
+
+                                <div className="flex-row">
                                     <FormPhoneInput
                                         htmlFor="phone"
                                         value={modalData.phone}

@@ -23,6 +23,10 @@
     flex-direction: column;
     gap: 20px;
 
+    @media (min-width: $media-xl) {
+        flex-grow: 1;
+    }
+
     &__item {
         border-radius: 20px;
         padding: 20px;

@@ -45,7 +45,7 @@ export default function SectionProjectsSlider({ slides, onChange, isLast }) {
                         {item.category && <span>{item.category}</span>}
 
                         <img
-                            src={item.src || Placeholder.src}
+                            src={item.image || Placeholder.src}
                             alt={`${item.title} - фото`}
                         />
                     </SwiperSlide>

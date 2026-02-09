@@ -21,7 +21,7 @@ export default function SectionPartners({ data }: { data: object }) {
                         {data?.list?.length > 0 &&
                             data?.list?.map((item) => (
                                 <img
-                                    src={item.photo || Placeholder.src}
+                                    src={item.logo || Placeholder.src}
                                     alt={item.name}
                                     key={item.id}
                                 />

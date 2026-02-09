@@ -82,6 +82,7 @@
             font-weight: 500;
             font-size: 20px;
             line-height: 120%;
+            letter-spacing: -1px;
 
             @media (min-width: $media-md) {
                 font-size: 25px;
@@ -120,7 +121,9 @@
             border-radius: 10px;
             background: rgba(255, 255, 255, 0.05);
             color: var(--color-white);
-            transition: background var(--trans), color var(--trans),
+            transition:
+                background var(--trans),
+                color var(--trans),
                 opacity var(--trans);
 
             @media (min-width: $media-md) {

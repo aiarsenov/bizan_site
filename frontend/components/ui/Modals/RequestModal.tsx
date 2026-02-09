@@ -58,7 +58,9 @@ export default function RequestModal({
             modalData,
         )
             .then((response) => {
-                console.log(response);
+                if (response.ok) {
+                    setResultType("success");
+                }
             })
             .catch((error) => {
                 setResultType("error");

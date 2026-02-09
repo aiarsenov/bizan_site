@@ -57,6 +57,10 @@
         @media (min-width: $media-md) {
             display: block;
         }
+
+        @media (min-width: $media-xl) {
+            padding: 15px 20px;
+        }
     }
 
     .menu {

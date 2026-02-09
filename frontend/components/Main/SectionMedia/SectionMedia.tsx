@@ -23,7 +23,7 @@ export default function SectionMedia({ data }: { data: object }) {
                                 data.list?.map((item) => (
                                     <li key={item.id}>
                                         <Link
-                                            href={item.link}
+                                            href={item.link ?? "#"}
                                             className="media-list__item"
                                         >
                                             <div className="media-list__item-header">

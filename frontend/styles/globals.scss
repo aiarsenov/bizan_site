@@ -88,11 +88,15 @@ body {
     position: absolute;
     width: 100%;
     aspect-ratio: 360 / 691;
-    top: 42%;
+    top: 32%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: -1;
     background: center / cover no-repeat url("../public/bg-main/bg-360.png");
+
+    @media (min-width: $media-sm) {
+        top: 40%;
+    }
 
     @media (min-width: $media-md) {
         background: center / cover no-repeat url("../public/bg-main/bg-768.png");

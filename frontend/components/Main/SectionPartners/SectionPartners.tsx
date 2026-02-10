@@ -21,7 +21,11 @@ export default function SectionPartners({ data }: { data: object }) {
                         {data?.list?.length > 0 &&
                             data?.list?.map((item) => (
                                 <img
-                                    src={item.logo || Placeholder.src}
+                                    src={
+                                        item.logo?.data?.attributes?.url
+                                            ? `${process.env.NEXT_PUBLIC_STRAPI_URL}${item.logo.data.attributes.url}`
+                                            : Placeholder.src
+                                    }
                                     alt={item.name}
                                     key={item.id}
                                 />

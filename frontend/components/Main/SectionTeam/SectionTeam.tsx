@@ -48,8 +48,9 @@ export default function SectionTeam({ data }: { data: object }) {
                                         <div className="image slider-team__image">
                                             <img
                                                 src={
-                                                    slide.photo ||
-                                                    Placeholder.src
+                                                    slide.photo?.data?.attributes?.url
+                                                        ? `${process.env.NEXT_PUBLIC_STRAPI_URL}${slide.photo.data.attributes.url}`
+                                                        : Placeholder.src
                                                 }
                                                 alt={slide.name}
                                             />

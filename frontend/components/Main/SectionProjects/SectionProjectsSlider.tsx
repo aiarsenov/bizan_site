@@ -45,7 +45,11 @@ export default function SectionProjectsSlider({ slides, onChange, isLast }) {
                         {item.category && <span>{item.category}</span>}
 
                         <img
-                            src={item.image || Placeholder.src}
+                            src={
+                                item.image?.data?.attributes?.url
+                                    ? `${process.env.NEXT_PUBLIC_STRAPI_URL}${item.image.data.attributes.url}`
+                                    : Placeholder.src
+                            }
                             alt={`${item.title} - фото`}
                         />
                     </SwiperSlide>

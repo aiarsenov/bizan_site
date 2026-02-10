@@ -1,11 +1,9 @@
 @use "@/styles/media-breakpoints" as *;
-
-@import "./reset.scss";
-@import "./variables.scss";
-@import "./connected-fonts.scss";
-@import "../components/ui/Form/Form.scss";
-
-@import "tailwindcss";
+@use "./reset.scss";
+@use "./variables.scss";
+@use "./connected-fonts.scss";
+@use "../components/ui/Form/Form.scss";
+@use "tailwindcss";
 
 html {
     scroll-behavior: smooth;

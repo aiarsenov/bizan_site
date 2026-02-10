@@ -27,6 +27,7 @@ export default function SectionPartners({ data }: { data: object }) {
                                             : Placeholder.src
                                     }
                                     alt={item.name}
+                                    loading="lazy"
                                     key={item.id}
                                 />
                             ))}

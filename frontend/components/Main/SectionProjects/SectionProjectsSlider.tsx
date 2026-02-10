@@ -51,6 +51,7 @@ export default function SectionProjectsSlider({ slides, onChange, isLast }) {
                                     : Placeholder.src
                             }
                             alt={`${item.title} - фото`}
+                            loading="lazy"
                         />
                     </SwiperSlide>
                 ))}

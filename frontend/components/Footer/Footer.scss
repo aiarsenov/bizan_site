@@ -76,6 +76,10 @@
             margin-bottom: 104px;
         }
 
+        @media (min-width: $media-xxxl) {
+            margin-bottom: 80px;
+        }
+
         p {
             display: inline-block;
             font-weight: 500;
@@ -108,7 +112,7 @@
             }
 
             @media (min-width: $media-xxxl) {
-                flex: 0 0 690px;
+                flex: 0 0 529px;
             }
         }
 

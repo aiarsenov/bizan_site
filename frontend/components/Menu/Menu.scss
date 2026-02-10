@@ -20,4 +20,8 @@
         padding-top: 6px;
         flex-direction: row;
     }
+
+    @media (min-width: $media-xxxl) {
+        gap: 40px;
+    }
 }

@@ -56,7 +56,7 @@ export async function getMenuList() {
 export async function getHomePage() {
     try {
         const data = await fetchAPI(
-            "/home-page?populate[hero][populate]=*&populate[services][populate]=*&populate[projects][populate]=*&populate[partners][populate]=*&populate[media][populate]=*&populate[team][populate]=*&populate[faq][populate]=*&populate[contacts]=*",
+            "/home-page?populate[hero][populate][stats]=*&populate[services][populate][list][populate]=*&populate[projects][populate][list][populate]=*&populate[partners][populate][list][populate]=*&populate[media][populate][list][populate]=*&populate[team][populate][list][populate]=*&populate[faq][populate][list]=*&populate[contacts]=*",
             {
                 cache: "no-store",
             },

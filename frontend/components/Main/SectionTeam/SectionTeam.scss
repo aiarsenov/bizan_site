@@ -23,7 +23,6 @@
 
     &__slider {
         margin-right: -15px;
-        // margin-bottom: 60px;
 
         .swiper-wrapper {
             padding-right: 15px;
@@ -39,12 +38,10 @@
 
         @media (min-width: $media-md) {
             margin-right: -20px;
-            // margin-bottom: 40px;
         }
 
         @media (min-width: $media-xl) {
             margin-right: 0;
-            // margin-bottom: 70px;
         }
     }
 
@@ -55,6 +52,15 @@
 }
 
 .slider-team {
+    &__slide {
+        cursor: pointer;
+        &:hover {
+            .slider-team__position {
+                color: rgba(255, 255, 255, 1);
+            }
+        }
+    }
+
     &__image {
         height: 330px;
         width: 100%;
@@ -107,5 +113,6 @@
 
     &__position {
         color: rgba(255, 255, 255, 0.4);
+        transition: color var(--trans);
     }
 }

@@ -1,8 +1,21 @@
+import type { SectionData } from "@/types/sectionData";
+
 import { motion } from "framer-motion";
 
 import "./SectionServices.scss";
 
-export default function SectionServices({ data }: { data: object }) {
+type ListItem = {
+    title: string | number;
+    subtitle: string | number;
+};
+
+type SectionServicesData = SectionData<ListItem>;
+
+export default function SectionServices({
+    data,
+}: {
+    data: SectionServicesData;
+}) {
     return (
         <motion.div
             initial={{ opacity: 0, y: -150 }}

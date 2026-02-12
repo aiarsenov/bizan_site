@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 
+import type { SectionData } from "@/types/sectionData";
+
 import { motion } from "framer-motion";
 
 import SectionProjectsTextContent from "./SectionProjectsTextContent";
@@ -9,7 +11,22 @@ import SectionProjectsSlider from "./SectionProjectsSlider";
 
 import "./SectionProjects.scss";
 
-export default function SectionProjects({ data }: { data: object }) {
+type ListItem = {
+    id: number;
+    title: string | number;
+    category: string | number;
+    description: string | number;
+    link: string;
+    image: object;
+};
+
+type SectionProjectsData = SectionData<ListItem>;
+
+export default function SectionProjects({
+    data,
+}: {
+    data: SectionProjectsData;
+}) {
     const [active, setActive] = useState(0);
 
     return (

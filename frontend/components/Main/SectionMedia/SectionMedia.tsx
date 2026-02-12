@@ -1,10 +1,22 @@
-import Link from "next/link";
+import type { SectionData } from "@/types/sectionData";
 
 import { motion } from "framer-motion";
 
+import Link from "next/link";
+
 import "./SectionMedia.scss";
 
-export default function SectionMedia({ data }: { data: object }) {
+type ListItem = {
+    id: number;
+    link: string;
+    title: string | number;
+    source: string;
+    read_time: string | number;
+};
+
+type SectionMediaData = SectionData<ListItem>;
+
+export default function SectionMedia({ data }: { data: SectionMediaData }) {
     return (
         <motion.div
             initial={{ opacity: 0, y: -150 }}

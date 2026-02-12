@@ -6,3 +6,5 @@ export const store = configureStore({
         menu: menuReducer,
     },
 });
+
+export type AppDispatch = typeof store.dispatch;

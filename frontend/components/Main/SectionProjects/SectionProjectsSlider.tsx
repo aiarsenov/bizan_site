@@ -7,7 +7,26 @@ import Placeholder from "@/assets/placeholder.jpg";
 import "swiper/css";
 import "swiper/css/pagination";
 
-export default function SectionProjectsSlider({ slides, onChange, isLast }) {
+type SlideItem = {
+    id: number;
+    title: string | number;
+    category: string | number;
+    description: string | number;
+    link: string;
+    image: object;
+};
+
+type SectionProjectsSliderProps = {
+    slides: SlideItem[];
+    onChange: (arg: number) => void;
+    isLast: boolean;
+};
+
+export default function SectionProjectsSlider({
+    slides,
+    onChange,
+    isLast,
+}: SectionProjectsSliderProps) {
     return (
         <div>
             <Swiper

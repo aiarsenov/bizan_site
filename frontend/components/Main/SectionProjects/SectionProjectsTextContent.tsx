@@ -1,4 +1,18 @@
-export default function SectionProjectsTextContent({ title, slide }) {
+type SlideItem = {
+    id: number;
+    title: string | number;
+    description: string | number;
+};
+
+type SectionProjectsTextContentProps = {
+    title: string | number;
+    slide: SlideItem;
+};
+
+export default function SectionProjectsTextContent({
+    title,
+    slide,
+}: SectionProjectsTextContentProps) {
     return (
         <div className="section-projects__text-content">
             <h2 className="title">{title}</h2>

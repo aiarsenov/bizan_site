@@ -7,7 +7,11 @@ export const metadata: Metadata = {
     description: "Инновационные продукты и услуги для вашего бизнеса",
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({
+    children,
+}: {
+    children: React.ReactNode;
+}) {
     return (
         <html>
             <body>

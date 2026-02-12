@@ -1,13 +1,25 @@
 "use client";
 
+import type { SectionData } from "@/types/sectionData";
+
 import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
+
 import Placeholder from "@/assets/placeholder.jpg";
 
 import "swiper/css";
 import "./SectionTeam.scss";
 
-export default function SectionTeam({ data }: { data: object }) {
+type ListItem = {
+    id: number;
+    name: string | number;
+    position: string | number;
+    photo: object;
+};
+
+type SectionTeamData = SectionData<ListItem>;
+
+export default function SectionTeam({ data }: { data: SectionTeamData }) {
     return (
         <motion.div
             initial={{ opacity: 0, y: -150 }}

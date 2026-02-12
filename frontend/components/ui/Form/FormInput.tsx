@@ -1,5 +1,7 @@
 "use client";
 
+import type { InputProps } from "@/types/inputProps";
+
 export default function FormInput({
     htmlFor = "",
     value,
@@ -9,16 +11,7 @@ export default function FormInput({
     onBlur,
     type = "text",
     isDisabled = false,
-}: {
-    htmlFor?: string;
-    value?: string | number;
-    placeholder?: string;
-    isError?: boolean;
-    onChange: (value: string) => void;
-    onBlur?: () => void;
-    type?: "text" | "number";
-    isDisabled?: boolean;
-}) {
+}: InputProps) {
     return (
         <label
             htmlFor={htmlFor}

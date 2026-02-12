@@ -1,10 +1,20 @@
+import type { SectionData } from "@/types/sectionData";
+
 import FAQListItem from "./FAQListItem";
 
 import { motion } from "framer-motion";
 
 import "./FAQ.scss";
 
-export default function FAQ({ data }: { data: object }) {
+type ListItem = {
+    id: number;
+    question: string | number;
+    answer: string | number;
+};
+
+type FAQData = SectionData<ListItem>;
+
+export default function FAQ({ data }: { data: FAQData }) {
     return (
         <motion.div
             initial={{ opacity: 0, y: -150 }}

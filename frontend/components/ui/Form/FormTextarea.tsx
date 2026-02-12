@@ -2,6 +2,16 @@
 
 import { useRef, useEffect } from "react";
 
+type FormTextareaProps = {
+    value: string;
+    placeholder: string;
+    minHeight?: number;
+    isError?: boolean;
+    onChange: (value: string) => void;
+    onBlur?: () => void;
+    isDisabled?: boolean;
+};
+
 export default function FormTextarea({
     value,
     placeholder,
@@ -10,15 +20,7 @@ export default function FormTextarea({
     onChange,
     onBlur,
     isDisabled,
-}: {
-    value: string;
-    placeholder: string;
-    minHeight?: number;
-    isError?: boolean;
-    onChange: (value: string) => void;
-    onBlur?: () => void;
-    isDisabled?: boolean;
-}) {
+}: FormTextareaProps) {
     const textareaRef = useRef(null);
 
     const resizeTextarea = () => {

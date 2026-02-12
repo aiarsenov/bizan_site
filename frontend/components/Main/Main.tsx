@@ -14,8 +14,18 @@ import FAQ from "../FAQ/FAQ";
 
 import "./Main.scss";
 
+type HomePageData = {
+    hero: object;
+    services: object;
+    projects: object;
+    partners: object;
+    team: object;
+    media: object;
+    faq: object;
+};
+
 export default function Main() {
-    const [data, setData] = useState();
+    const [data, setData] = useState<HomePageData | null>();
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {

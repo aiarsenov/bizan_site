@@ -2,15 +2,26 @@
 
 import { useRequestModal } from "@/components/RequestModalContext";
 
+import { motion } from "framer-motion";
+
 import ParallaxElipses from "@/components/ui/ParallaxElipses/ParallaxElipses";
 import ButtonAction from "../../ui/Buttons/ButtonAction";
 import ScrollIcon from "@/components/ui/ScrollIcon/ScrollIcon";
 
-import { motion } from "framer-motion";
-
 import "./SectionMain.scss";
 
-export default function SectionMain({ data }: { data: object }) {
+type StatsItem = {
+    title: string | number;
+    subtitle: string | number;
+};
+
+type SectionMainData = {
+    title: string | number;
+    subtitle: string | number;
+    stats: StatsItem[];
+};
+
+export default function SectionMain({ data }: { data: SectionMainData }) {
     const { open } = useRequestModal();
 
     return (

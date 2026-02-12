@@ -1,3 +1,5 @@
+import type { ButtonProps } from "@/types/buttonProps";
+
 import "./Buttons.scss";
 
 export default function ButtonAction({
@@ -7,14 +9,7 @@ export default function ButtonAction({
     isDisabled = false,
     isloading = false,
     onClick,
-}: {
-    title?: string;
-    label: string;
-    className?: string;
-    isDisabled?: boolean;
-    isloading?: boolean;
-    onClick: () => void;
-}) {
+}: ButtonProps) {
     return (
         <button
             type="button"

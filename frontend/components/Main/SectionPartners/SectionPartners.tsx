@@ -1,9 +1,24 @@
 import { motion } from "framer-motion";
+
+import type { SectionData } from "@/types/sectionData";
+
 import Placeholder from "@/assets/placeholder.jpg";
 
 import "./SectionPartners.scss";
 
-export default function SectionPartners({ data }: { data: object }) {
+type ListItem = {
+    id: number;
+    name: string | number;
+    logo: object;
+};
+
+type SectionPartnersData = SectionData<ListItem>;
+
+export default function SectionPartners({
+    data,
+}: {
+    data: SectionPartnersData;
+}) {
     return (
         <motion.div
             initial={{ opacity: 0, y: -150 }}

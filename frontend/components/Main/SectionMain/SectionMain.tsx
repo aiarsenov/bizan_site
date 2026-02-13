@@ -15,7 +15,7 @@ type StatsItem = {
     subtitle: string | number;
 };
 
-type SectionMainData = {
+export type SectionMainData = {
     title: string | number;
     subtitle: string | number;
     stats: StatsItem[];

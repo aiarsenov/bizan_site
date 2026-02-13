@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 
 import type { SectionData } from "@/types/sectionData";
+import type { Image } from "@/types/image";
 
 import Placeholder from "@/assets/placeholder.jpg";
 
@@ -9,10 +10,10 @@ import "./SectionPartners.scss";
 type ListItem = {
     id: number;
     name: string | number;
-    logo: object;
+    logo: Image;
 };
 
-type SectionPartnersData = SectionData<ListItem>;
+export type SectionPartnersData = SectionData<ListItem>;
 
 export default function SectionPartners({
     data,
@@ -41,7 +42,7 @@ export default function SectionPartners({
                                             ? `${process.env.NEXT_PUBLIC_STRAPI_URL}${item.logo.data.attributes.url}`
                                             : Placeholder.src
                                     }
-                                    alt={item.name}
+                                    alt={String(item.name)}
                                     loading="lazy"
                                     key={item.id}
                                 />

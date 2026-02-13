@@ -1,6 +1,7 @@
 "use client";
 
 import type { SectionData } from "@/types/sectionData";
+import type { Image } from "@/types/image";
 
 import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -14,10 +15,10 @@ type ListItem = {
     id: number;
     name: string | number;
     position: string | number;
-    photo: object;
+    photo: Image;
 };
 
-type SectionTeamData = SectionData<ListItem>;
+export type SectionTeamData = SectionData<ListItem>;
 
 export default function SectionTeam({ data }: { data: SectionTeamData }) {
     return (
@@ -65,7 +66,7 @@ export default function SectionTeam({ data }: { data: SectionTeamData }) {
                                                         ? `${process.env.NEXT_PUBLIC_STRAPI_URL}${slide.photo.data.attributes.url}`
                                                         : Placeholder.src
                                                 }
-                                                alt={slide.name}
+                                                alt={String(slide.name)}
                                                 loading="lazy"
                                             />
                                         </div>

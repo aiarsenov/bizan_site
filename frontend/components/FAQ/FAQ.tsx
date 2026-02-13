@@ -12,7 +12,7 @@ type ListItem = {
     answer: string | number;
 };
 
-type FAQData = SectionData<ListItem>;
+export type FAQData = SectionData<ListItem>;
 
 export default function FAQ({ data }: { data: FAQData }) {
     return (

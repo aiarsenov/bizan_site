@@ -5,11 +5,12 @@ import { motion } from "framer-motion";
 import "./SectionServices.scss";
 
 type ListItem = {
+    id: number;
     title: string | number;
     subtitle: string | number;
 };
 
-type SectionServicesData = SectionData<ListItem>;
+export type SectionServicesData = SectionData<ListItem>;
 
 export default function SectionServices({
     data,

@@ -15,6 +15,8 @@ import ModalResult from "./ModalResult";
 
 import "./Modals.scss";
 
+type ResultType = "success" | "error" | null;
+
 export default function RequestModal({
     isActive = false,
 }: {
@@ -33,7 +35,7 @@ export default function RequestModal({
         phone: false,
     });
 
-    const [resultType, setResultType] = useState(null);
+    const [resultType, setResultType] = useState<ResultType>(null);
 
     // Валидация формы
     const handleValidate = () => {
@@ -62,13 +64,13 @@ export default function RequestModal({
                     setResultType("success");
                 }
             })
-            .catch((error) => {
+            .catch(() => {
                 setResultType("error");
             });
     };
 
     // Обработка ввода
-    const handleChange = (name, value) => {
+    const handleChange = (name: string, value: string | number) => {
         setModalData((prev) => ({
             ...prev,
             [name]: value,

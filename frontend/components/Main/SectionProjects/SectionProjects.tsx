@@ -3,6 +3,7 @@
 import { useState } from "react";
 
 import type { SectionData } from "@/types/sectionData";
+import type { Image } from "@/types/image";
 
 import { motion } from "framer-motion";
 
@@ -17,10 +18,10 @@ type ListItem = {
     category: string | number;
     description: string | number;
     link: string;
-    image: object;
+    image: Image;
 };
 
-type SectionProjectsData = SectionData<ListItem>;
+export type SectionProjectsData = SectionData<ListItem>;
 
 export default function SectionProjects({
     data,

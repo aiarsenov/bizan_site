@@ -1,11 +1,12 @@
 "use client";
 
 import { useSelector } from "react-redux";
+import type { RootState } from "@/store";
 
 import "./Menu.scss";
 
 export default function Menu() {
-    const items = useSelector((state) => state.menu.items);
+    const items = useSelector((state: RootState) => state.menu.items);
 
     return (
         <nav className="menu">

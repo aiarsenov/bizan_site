@@ -1,6 +1,8 @@
-import { Swiper, SwiperSlide } from "swiper/react";
+import type { Image } from "@/types/image";
 
+import { Swiper, SwiperSlide } from "swiper/react";
 import { Mousewheel, Pagination, EffectCreative } from "swiper/modules";
+
 import Link from "next/link";
 import Placeholder from "@/assets/placeholder.jpg";
 
@@ -13,7 +15,7 @@ type SlideItem = {
     category: string | number;
     description: string | number;
     link: string;
-    image: object;
+    image: Image;
 };
 
 type SectionProjectsSliderProps = {
@@ -69,7 +71,7 @@ export default function SectionProjectsSlider({
                                     ? `${process.env.NEXT_PUBLIC_STRAPI_URL}${item.image.data.attributes.url}`
                                     : Placeholder.src
                             }
-                            alt={`${item.title} - фото`}
+                            alt={`${String(item.title)} - фото`}
                             loading="lazy"
                         />
                     </SwiperSlide>

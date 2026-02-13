@@ -2,7 +2,22 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { fetchMenu } from "./menuThunks";
 
-const initialState = {
+export type MenuItem = {
+    id: number;
+    attributes: {
+        isVisible: boolean;
+        url: string;
+        title: string;
+    };
+};
+
+type MenuState = {
+    items: MenuItem[];
+    loading: boolean;
+    error: string | null;
+};
+
+const initialState: MenuState = {
     items: [],
     loading: false,
     error: null,
@@ -24,7 +39,7 @@ const menuSlice = createSlice({
             })
             .addCase(fetchMenu.rejected, (state, action) => {
                 state.loading = false;
-                state.error = action.error.message;
+                state.error = action.error.message ?? null;
             });
     },
 });

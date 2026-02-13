@@ -27,7 +27,7 @@ export default function FormPhoneInput({
                 type="tel"
                 inputMode="tel"
                 placeholder={placeholder}
-                value={value ?? ""}
+                value={String(value ?? "")}
                 onAccept={(val) => onChange(String(val || ""))}
                 onBlur={onBlur}
                 disabled={isDisabled}

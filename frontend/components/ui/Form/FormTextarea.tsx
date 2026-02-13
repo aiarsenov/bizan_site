@@ -21,7 +21,7 @@ export default function FormTextarea({
     onBlur,
     isDisabled,
 }: FormTextareaProps) {
-    const textareaRef = useRef(null);
+    const textareaRef = useRef<HTMLTextAreaElement | null>(null);
 
     const resizeTextarea = () => {
         const el = textareaRef.current;

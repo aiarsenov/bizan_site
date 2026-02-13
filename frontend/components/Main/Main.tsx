@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 
 import { getHomePage } from "@/lib/api";
 
+import type { MainPageData } from "@/types/page";
+
 import SectionMain from "./SectionMain/SectionMain";
 import SectionServices from "./SectionServices/SectionServices";
 import SectionProjects from "./SectionProjects/SectionProjects";
@@ -14,18 +16,8 @@ import FAQ from "../FAQ/FAQ";
 
 import "./Main.scss";
 
-type HomePageData = {
-    hero: object;
-    services: object;
-    projects: object;
-    partners: object;
-    team: object;
-    media: object;
-    faq: object;
-};
-
 export default function Main() {
-    const [data, setData] = useState<HomePageData | null>();
+    const [data, setData] = useState<MainPageData | null>();
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {

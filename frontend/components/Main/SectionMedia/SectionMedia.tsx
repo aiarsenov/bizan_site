@@ -14,7 +14,7 @@ type ListItem = {
     read_time: string | number;
 };
 
-type SectionMediaData = SectionData<ListItem>;
+export type SectionMediaData = SectionData<ListItem>;
 
 export default function SectionMedia({ data }: { data: SectionMediaData }) {
     return (

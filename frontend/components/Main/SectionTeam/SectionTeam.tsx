@@ -16,6 +16,7 @@ type ListItem = {
     name: string | number;
     position: string | number;
     photo: Image;
+    photo2: Image;
 };
 
 export type SectionTeamData = SectionData<ListItem>;
@@ -60,10 +61,22 @@ export default function SectionTeam({ data }: { data: SectionTeamData }) {
                                     >
                                         <div className="image slider-team__image">
                                             <img
+                                                className="slider-team__image_first"
                                                 src={
                                                     slide.photo?.data
                                                         ?.attributes?.url
                                                         ? `${process.env.NEXT_PUBLIC_STRAPI_URL}${slide.photo.data.attributes.url}`
+                                                        : Placeholder.src
+                                                }
+                                                alt={String(slide.name)}
+                                                loading="lazy"
+                                            />
+
+                                            <img
+                                                src={
+                                                    slide.photo2?.data
+                                                        ?.attributes?.url
+                                                        ? `${process.env.NEXT_PUBLIC_STRAPI_URL}${slide.photo2.data.attributes.url}`
                                                         : Placeholder.src
                                                 }
                                                 alt={String(slide.name)}

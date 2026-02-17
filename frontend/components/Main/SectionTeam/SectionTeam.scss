@@ -58,6 +58,11 @@
             .slider-team__position {
                 color: rgba(255, 255, 255, 1);
             }
+
+            .slider-team__image_first {
+                opacity: 0;
+                scale: 1.02;
+            }
         }
     }
 
@@ -66,6 +71,13 @@
         width: 100%;
         border-radius: 20px;
         margin-bottom: 20px;
+
+        &_first {
+            transition:
+                opacity var(--trans),
+                scale var(--trans);
+            z-index: 2;
+        }
 
         @media (min-width: $media-md) {
             height: 358px;

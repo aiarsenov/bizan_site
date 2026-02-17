@@ -49,20 +49,20 @@
         flex-direction: column;
         justify-content: space-between;
         transition: background var(--trans);
-        height: 188px;
+        min-height: 188px;
         gap: 20px;
 
         @media (min-width: $media-md) {
             padding: 40px;
-            height: 180px;
+            min-height: 180px;
         }
 
         @media (min-width: $media-xl) {
-            height: 370px;
+            min-height: 370px;
         }
 
         @media (min-width: $media-xxxl) {
-            height: 450px;
+            min-height: 450px;
         }
 
         &:hover {

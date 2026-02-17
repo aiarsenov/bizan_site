@@ -32,23 +32,30 @@ export default function SectionMedia({ data }: { data: SectionMediaData }) {
                     <div className="section-media__content">
                         <ul className="section-media__content-list media-list">
                             {data.list?.length > 0 &&
-                                data.list?.map((item) => (
-                                    <li key={item.id}>
-                                        <Link
-                                            href={item.link ?? "#"}
-                                            className="media-list__item"
-                                        >
-                                            <div className="media-list__item-header">
-                                                <span>{item.source}</span>
-                                                <span>{item.read_time}</span>
-                                            </div>
+                                data.list?.map(
+                                    (item, index) =>
+                                        index <= 8 && (
+                                            <li key={item.id}>
+                                                <Link
+                                                    href={item.link ?? "#"}
+                                                    className="media-list__item"
+                                                >
+                                                    <div className="media-list__item-header">
+                                                        <span>
+                                                            {item.source}
+                                                        </span>
+                                                        <span>
+                                                            {item.read_time}
+                                                        </span>
+                                                    </div>
 
-                                            <div className="media-list__item-body">
-                                                {item.title}
-                                            </div>
-                                        </Link>
-                                    </li>
-                                ))}
+                                                    <div className="media-list__item-body">
+                                                        {item.title}
+                                                    </div>
+                                                </Link>
+                                            </li>
+                                        ),
+                                )}
                         </ul>
 
                         {/* <Link href="#" className="button-link section-media__read-more">

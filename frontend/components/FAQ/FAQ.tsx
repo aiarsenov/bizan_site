@@ -20,7 +20,7 @@ export default function FAQ({ data }: { data: FAQData }) {
             initial={{ opacity: 0, y: -150 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
-            viewport={{ once: true, amount: 0.5 }}
+            viewport={{ once: true, amount: 0.3 }}
         >
             <section className="section section-faq">
                 <div className="container section-faq__container">

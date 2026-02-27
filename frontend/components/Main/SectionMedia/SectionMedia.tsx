@@ -19,10 +19,13 @@ export type SectionMediaData = SectionData<ListItem>;
 export default function SectionMedia({ data }: { data: SectionMediaData }) {
     return (
         <motion.div
-            initial={{ opacity: 0, y: -150 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            // initial={{ opacity: 0, y: -150 }}
+            // whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             transition={{ duration: 0.4 }}
-            viewport={{ once: true, amount: 0.5 }}
+            viewport={{ once: true }}
+            // viewport={{ once: true, amount: 0.3 }}
         >
             <section className="section section-media" id="media">
                 <div className="container section-media__container">

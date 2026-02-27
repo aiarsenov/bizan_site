@@ -25,7 +25,7 @@ export default function SectionPartners({
             initial={{ opacity: 0, y: -150 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
-            viewport={{ once: true, amount: 0.5 }}
+            viewport={{ once: true, amount: 0.3 }}
         >
             <section className="section section-partners" id="partners">
                 <div className="container section-partners__container">

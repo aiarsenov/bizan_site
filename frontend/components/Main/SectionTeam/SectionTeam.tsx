@@ -27,7 +27,7 @@ export default function SectionTeam({ data }: { data: SectionTeamData }) {
             initial={{ opacity: 0, y: -150 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.4 }}
-            viewport={{ once: true, amount: 0.5 }}
+            viewport={{ once: true, amount: 0.3 }}
         >
             <section className="section section-team" id="team">
                 <div className="circle-bg"></div>

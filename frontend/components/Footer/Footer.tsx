@@ -45,13 +45,6 @@ export default function Footer() {
                     </div>
 
                     <div className="footer__col">
-                        <a
-                            href="https://t.me/bizanpro"
-                            className="footer__link"
-                            target="_blank"
-                        >
-                            t.me/bizanpro
-                        </a>
                         <a href="mailto:hi@bizan.pro" className="footer__link">
                             hi@bizan.pro
                         </a>

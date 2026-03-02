@@ -41,7 +41,7 @@ export default function Header() {
                     <Menu />
 
                     <a
-                        href="https://t.me/bizanpro"
+                        href="https://t.me/dmitriy_kolesnikov"
                         className="header__telegram-link"
                         target="_blank"
                     >

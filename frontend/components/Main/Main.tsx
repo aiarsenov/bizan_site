@@ -10,7 +10,7 @@ import SectionMain from "./SectionMain/SectionMain";
 import SectionServices from "./SectionServices/SectionServices";
 import SectionProjects from "./SectionProjects/SectionProjects";
 import SectionPartners from "./SectionPartners/SectionPartners";
-import SectionTeam from "./SectionTeam/SectionTeam";
+// import SectionTeam from "./SectionTeam/SectionTeam";
 import SectionMedia from "./SectionMedia/SectionMedia";
 import FAQ from "../FAQ/FAQ";
 
@@ -56,7 +56,7 @@ export default function Main() {
 
             {data?.partners && <SectionPartners data={data?.partners} />}
 
-            {data?.team && <SectionTeam data={data?.team} />}
+            {/* {data?.team && <SectionTeam data={data?.team} />} */}
 
             {data?.media && <SectionMedia data={data?.media} />}
 

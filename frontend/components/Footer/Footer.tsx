@@ -62,17 +62,17 @@ export default function Footer() {
                     <div className="footer__bottom-left">
                         <p>ООО «Бизан»</p>
                         <p>ИНН 7453321781</p>
-                        <span>© 2025 Бизан</span>
+                        <span>© {new Date().getFullYear()} Бизан</span>
                     </div>
 
                     <Menu />
 
                     <div className="footer__bottom-right">
-                        <Link href="/">
+                        <a href="/documents/privacy-policy.pdf" target="_blank">
                             Согласие на обработку <br /> персональных данных
-                        </Link>
+                        </a>
 
-                        <Link href="/">Политика конфиденциальности</Link>
+                        <a href="/documents/privacy-policy.pdf" target="_blank">Политика конфиденциальности</a>
                     </div>
                 </div>
             </div>

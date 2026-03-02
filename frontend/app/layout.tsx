@@ -3,8 +3,11 @@ import type { Metadata } from "next";
 import "@/styles/globals.scss";
 
 export const metadata: Metadata = {
-    title: "БИЗАН | Профессиональные решения для бизнеса",
-    description: "Инновационные продукты и услуги для вашего бизнеса",
+    title: "Бизан | Превращаем данные в инструменты управления, объединяя аналитику и технологии",
+    description: "Бизан | Превращаем данные в инструменты управления, объединяя аналитику и технологии",
+    icons: {
+        icon: '/favicon.ico',
+    },
 };
 
 export default function RootLayout({

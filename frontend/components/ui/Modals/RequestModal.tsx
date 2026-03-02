@@ -165,7 +165,7 @@ export default function RequestModal({
 
                                     <div className="modal-form__agreement">
                                         Нажимая кнопку, я соглашаюсь <br /> на
-                                        <a href="#">
+                                        <a href="/documents/privacy-policy.pdf" target="_blank">
                                             обработку моих персональных данных
                                         </a>
                                     </div>
@@ -177,14 +177,6 @@ export default function RequestModal({
 
                 <div className="modal__footer">
                     <Link href="/" className="logo logo_black" />
-
-                    <a
-                        href="https://t.me/bizanpro"
-                        className="modal__footer-link"
-                        target="_blank"
-                    >
-                        t.me/bizanpro
-                    </a>
 
                     <a
                         href="mailto:hi@bizan.pro"

@@ -69,10 +69,8 @@ export default function Footer() {
 
                     <div className="footer__bottom-right">
                         <a href="/documents/privacy-policy.pdf" target="_blank">
-                            Согласие на обработку <br /> персональных данных
+                            Политика в отношении обработки <br /> и защиты персональных данных
                         </a>
-
-                        <a href="/documents/privacy-policy.pdf" target="_blank">Политика конфиденциальности</a>
                     </div>
                 </div>
             </div>
